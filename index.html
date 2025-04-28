@@ -21,13 +21,83 @@
         />
 
         <link rel="stylesheet" href="style.css" />
+
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+                showDivs((slideIndex += n));
+            }
+
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("varjenje-slide");
+                if (n > x.length) {
+                    slideIndex = 1;
+                }
+                if (n < 1) {
+                    slideIndex = x.length;
+                }
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                if (x[slideIndex - 1] !== undefined) {
+                    x[slideIndex - 1].style.display = "block";
+                }
+            }
+        </script>
     </head>
     <body class="ma0 pa0">
+        <!-- Navigation Bar -->
+        <header
+            id="navbar"
+            class="fixed top-0 left-0 w-100 flex justify-between items-center bg-white-90 z-5 pa2"
+        >
+            <!-- Logo -->
+            <div class="logo" id="nav-logo">
+                <img src="img/logo_gc.png" id="logo" />
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-menu dn flex-l pa3">
+                <a href="#varjenje" class="nav-link ml3">Varjenje</a>
+                <a href="#montaza" class="nav-link ml3">Montaža</a>
+                <a href="#servis" class="nav-link ml3">Servis</a>
+                <a href="#lokacije-dela" class="nav-link ml3">Lokacije Dela</a>
+                <a href="#kontakt" class="nav-link ml3">Kontakt</a>
+            </nav>
+
+            <!-- Mobile Burger (show on mobile, hide on desktop) -->
+            <div class="burger flex dn-l items-center">
+                <button id="burger-btn" class="f3 bg-transparent bn pointer">
+                    ☰
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile expanded menu (hidden by default) -->
+        <div
+            id="mobile-menu"
+            class="fixed top-0 right-0 w-100 h-100 bg-white flex-column items-center justify-center dn z-4"
+        >
+            <a href="#varjenje" class="mobile-link mb3 f3">Varjenje</a>
+            <a href="#montaza" class="mobile-link mb3 f3">Montaža</a>
+            <a href="#servis" class="mobile-link mb3 f3">Servis</a>
+            <a href="#lokacije-dela" class="mobile-link mb3 f3"
+                >Lokacije Dela</a
+            >
+            <a href="#kontakt" class="mobile-link mb3 f3">Kontakt</a>
+            <button id="close-btn" class="mt4 f2 bg-transparent bn pointer">
+                ✕
+            </button>
+        </div>
+
         <!-- Initial landing layout -->
         <section id="o-nas">
             <div class="landing-layout pa4">
                 <!-- Mobile Order 1 -->
-                <div class="col1-row1 pa3 logo-container">
+                <div class="col1-row1 pa3 logo-container" id="landing-logo">
                     <img src="img/logo_gc.png" id="logo" />
                 </div>
 
@@ -83,7 +153,7 @@
                     class="col3-image flex items-center justify-center w-hidden pa2"
                 >
                     <img
-                        src="img/initial.webp"
+                        src="img/initial.png"
                         alt="GC"
                         class="w-auto h-auto br3"
                     />
@@ -93,19 +163,22 @@
 
         <!-- Section varjenje -->
         <section id="varjenje">
-            <div class="pa4 varjenje">
-                <!-- Mobile Order 1 -->
+            <div class="varjenje-layout pa4">
+                <!-- Mobile Order 1-3 -->
                 <div
-                    class="varjenje-col1 ph3 ph5-ns pv3 flex flex-column items-start"
+                    class="varjenje-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title"
                 >
-                    <!-- Heading -->
-                    <h1 class="f2 fw7 mb3 landing-title">Varjenje</h1>
-
-                    <!-- Two lines of text -->
-                    <p class="mb3 lh-copy">
-                        Varjenje MIG, MAG, TIG postopki. <br />
-                        Varimo jekla, inox, konstrukcije.
-                    </p>
+                    <h1 class="f2">Varjenje</h1>
+                </div>
+                <div
+                    class="varjenje-col1-row2 ph3 ph5-ns pv3 flex items-center justify-center lh-copy"
+                >
+                    Varjenje MIG, MAG, TIG postopki. <br />
+                    Varimo jekla, inox, konstrukcije.
+                </div>
+                <div
+                    class="varjenje-col1-row3 pa3 flex justify-center items-start"
+                >
                     <a
                         href="#montaza"
                         class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between"
@@ -117,74 +190,33 @@
                     </a>
                 </div>
 
-                <!-- Mobile Order 2 -->
-                <div
-                    class="varjenje-col2-row1 pv3 ph5 w-100 h-100 object-contain br3"
-                >
-                    <img
-                        src="img/2.jpg"
-                        alt="GC machinery showcase"
-                        class="w-100 h-100 object-contain br3"
-                    />
-                </div>
-
-                <!-- Mobile Order 3 -->
-                <div
-                    class="varjenje-col3-row1 pa3 flex items-center justify-center"
-                >
-                    <a
-                        href="#o-nas"
-                        class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between"
-                    >
-                        O nas
-                        <span class="material-symbols-outlined ml2"
-                            >arrow_upward</span
-                        >
-                    </a>
-                </div>
-
                 <!-- Mobile Order 4 -->
                 <div
-                    class="varjenje-col2-row2 pv3 ph5 w-100 h-100 object-contain br3"
+                    class="varjenje-col2-3-span pa4 flex justify-center items-center relative"
                 >
+                    <img
+                        src="img/3.jpg"
+                        alt=""
+                        class="varjenje-slide w-auto h-100"
+                    />
                     <img
                         src="img/2.jpg"
-                        alt="#"
-                        class="br3 mw-100 h-100 object-cover"
+                        alt=""
+                        class="varjenje-slide w-auto h-100 dn"
                     />
-                </div>
 
-                <!-- Mobile Order 5 -->
-                <div
-                    class="varjenje-col3-span pv3 ph5 w-100 h-100 object-contain br3"
-                >
-                    <img
-                        src="img/initial.webp"
-                        alt="GC machinery showcase"
-                        class="br3 w-100 mh-100 object-cover"
-                    />
-                </div>
-
-                <!-- Mobile Order 6 -->
-                <div
-                    class="varjenje-col1-row3 pv3 ph5 w-100 h-100 object-contain br3"
-                >
-                    <img
-                        src="img/2.jpg"
-                        alt="#"
-                        class="br3 mw-100 h-100 object-cover"
-                    />
-                </div>
-
-                <!-- Mobile Order 7 -->
-                <div
-                    class="varjenje-col2-row3 pv3 ph5 w-100 h-100 object-contain br3"
-                >
-                    <img
-                        src="img/2.jpg"
-                        alt="#"
-                        class="br3 mw-100 h-100 object-cover"
-                    />
+                    <button
+                        class="slider-btn slider-left absolute ml4"
+                        onclick="plusDivs(-1)"
+                    >
+                        &#10094;
+                    </button>
+                    <button
+                        class="slider-btn slider-right absolute mr4"
+                        onclick="plusDivs(+1)"
+                    >
+                        &#10095;
+                    </button>
                 </div>
             </div>
         </section>
@@ -192,20 +224,31 @@
         <!-- Section montaza -->
         <section id="montaza">
             <div class="montaza-layout pa4">
-                <!-- Mobile Order 1 -->
+                <!-- Mobile Order 1-3 -->
                 <div
-                    class="montaza-col2-span pa3 bg-washed-purple flex flex-column justify-center items-center"
+                    class="montaza-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title"
                 >
-                    <h2 class="f2 fw7 mb3 landing-title">Montaža</h2>
-                    <a
-                        href="#varjenje"
-                        class="navigation-button inline-flex items-center no-underline f4 fw5 mb3 justify-between"
-                    >
-                        Varjenje
-                        <span class="material-symbols-outlined ml2"
-                            >arrow_upward</span
-                        >
-                    </a>
+                    <h1 class="f2">Montaža</h1>
+                </div>
+                <div
+                    class="montaza-col1-row2 ph3 ph5-ns pv3 flex items-center justify-center lh-copy"
+                >
+                    <ol class="ma0">
+                        <li>Montaža manjših mehanskih komponent</li>
+                        <li>Montaža konstrukcij</li>
+                        <li>Montaža centralnih mazalnih sistemov</li>
+                        <li>Montaža pnevmatskih sistemov</li>
+                        <li>Montaža hidravličnih sistemov</li>
+                        <li>Montaža elektro vezave</li>
+                        <li>
+                            Montaža rezervoarjev in črpalk za naftne derivate za
+                            privat stranke
+                        </li>
+                    </ol>
+                </div>
+                <div
+                    class="montaza-col1-row3 pa3 flex justify-center items-start"
+                >
                     <a
                         href="#servis"
                         class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between"
@@ -217,88 +260,33 @@
                     </a>
                 </div>
 
-                <!-- Mobile Order 2 -->
-                <div class="montaza-col1-row1 pv3 ph5 flex flex-column">
-                    <p>Manjših mehanskih komponent</p>
-                    <div class="w-100 h-100 object-contain br3">
-                        <img
-                            src="img/2.jpg"
-                            alt="#"
-                            class="br3 mw-100 h-100 object-cover"
-                        />
-                    </div>
-                </div>
-
-                <!-- Mobile Order 3 -->
-                <div class="montaza-col3-row1 pv3 ph5 flex flex-column">
-                    <p>Konstrukcij</p>
-                    <div class="w-100 h-100 object-contain br3">
-                        <img
-                            src="img/2.jpg"
-                            alt="#"
-                            class="br3 mw-100 h-100 object-cover"
-                        />
-                    </div>
-                </div>
-
                 <!-- Mobile Order 4 -->
-                <div class="montaza-col1-row2 pv3 ph5 flex flex-column">
-                    <p>Centralnih mazalnih sistemov</p>
-                    <div class="w-100 h-100 object-contain br3">
-                        <img
-                            src="img/2.jpg"
-                            alt="#"
-                            class="br3 mw-100 h-100 object-cover"
-                        />
-                    </div>
-                </div>
+                <div
+                    class="montaza-col2-3-span pa4 flex justify-center items-center relative"
+                >
+                    <img
+                        src="img/3.jpg"
+                        alt=""
+                        class="montaza-slide w-auto h-100"
+                    />
+                    <img
+                        src="img/2.jpg"
+                        alt=""
+                        class="montaza-slide w-auto h-100 dn"
+                    />
 
-                <!-- Mobile Order 5 -->
-                <div class="montaza-col3-row2 pv3 ph5 flex flex-column">
-                    <p>Pnevmatskih sistemov</p>
-                    <div class="w-100 h-100 object-contain br3">
-                        <img
-                            src="img/2.jpg"
-                            alt="#"
-                            class="br3 mw-100 h-100 object-cover"
-                        />
-                    </div>
-                </div>
-
-                <!-- Mobile Order 6 -->
-                <div class="montaza-col1-row3 pv3 ph5 flex flex-column">
-                    <p>Hidravličnih sistemov</p>
-                    <div class="w-100 h-100 object-contain br3">
-                        <img
-                            src="img/2.jpg"
-                            alt="#"
-                            class="br3 mw-100 h-100 object-cover"
-                        />
-                    </div>
-                </div>
-
-                <!-- Mobile Order 7 -->
-                <div class="montaza-col2-row3 pv3 ph5 flex flex-column">
-                    <p>Elektro vezave</p>
-                    <div class="w-100 h-100 object-contain br3">
-                        <img
-                            src="img/2.jpg"
-                            alt="#"
-                            class="br3 mw-100 h-100 object-cover"
-                        />
-                    </div>
-                </div>
-
-                <!-- Mobile Order 8 -->
-                <div class="montaza-col3-row3 pv3 ph5 flex flex-column">
-                    <p>Rezervoarjev in črpalk za naftne derivate</p>
-                    <div class="w-100 h-100 object-contain br3">
-                        <img
-                            src="img/2.jpg"
-                            alt="#"
-                            class="br3 mw-100 h-100 object-cover"
-                        />
-                    </div>
+                    <button
+                        class="slider-btn slider-left absolute ml4"
+                        onclick="plusDivs(-1)"
+                    >
+                        &#10094;
+                    </button>
+                    <button
+                        class="slider-btn slider-right absolute mr4"
+                        onclick="plusDivs(+1)"
+                    >
+                        &#10095;
+                    </button>
                 </div>
             </div>
         </section>
@@ -306,96 +294,62 @@
         <!-- Section servis -->
         <section id="servis">
             <div class="servis-layout pa4">
-                <!-- Mobile Order 1 -->
+                <!-- Mobile Order 1-3 -->
                 <div
-                    class="servis-col2-span pa3 bg-washed-purple flex justify-center items-center"
+                    class="servis-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title"
                 >
-                    <h2 class="f2 fw7 mb3 landing-title">Servis</h2>
+                    <h1 class="f2">Servis</h1>
                 </div>
-
-                <!-- Mobile Order 2 (was 4) -->
                 <div
-                    class="servis-col1-row2 pv3 ph5 flex justify-center items-center"
+                    class="servis-col1-row2 ph3 ph5-ns pv3 flex flex-column items-center justify-center lh-copy"
                 >
-                    <p class="mb3 lh-copy">
+                    <p class="mb3">
                         Zavedamo se, da le hitra in strokovna pomoč zagotavlja
-                        učinkovito delo z našimi izdelki. <br />
-                        Zato pozornost posvečamo tudi poprodajnemu sodelovanju.
+                        učinkovito delo z našimi izdelki. Zato pozornost
+                        posvečamo tudi poprodajnemu sodelovanju.
                     </p>
                 </div>
-
-                <!-- Mobile Order 3 (was 5) -->
                 <div
-                    class="servis-col3-row2 pv3 ph5 flex justify-center items-center"
-                >
-                    Nudimo podporo za delovanje in učinkovito rabo izdelane
-                    mehanizacije ali nadgradnje, kar vam zagotavljamo tudi po
-                    naši montaži. V podjetju imamo na voljo storitve servisa.
-                </div>
-
-                <!-- Mobile Order 4 (was 7) -->
-                <div
-                    class="servis-col2-row3 pv3 ph5 flex justify-center items-center"
-                >
-                    Serviserji imajo izkušnje s terena in se stalno
-                    izobražujejo. Njihova naloga je, da vas obiščejo ter vam
-                    nudijo rešitve. Storitve servisa izvajamo na delovni
-                    lokaciji ali v poslovnih prostorih in vam svetujemo, kako
-                    zmanjšati stroške vzdrževanja in obratovanja gradbenega
-                    stroja ter vam nudimo svetovanje pri morebitni nadgradnji
-                    ali samo popravilu.
-                </div>
-
-                <!-- Mobile Order 5 (was 3) -->
-                <div
-                    class="servis-col3-row1 pa3 flex justify-center items-center"
-                >
-                    <a
-                        href="#montaza"
-                        class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between"
-                    >
-                        Montaža
-                        <span class="material-symbols-outlined ml2"
-                            >arrow_upward</span
-                        >
-                    </a>
-                </div>
-
-                <!-- Mobile Order 6 -->
-                <div
-                    class="servis-col1-row3 pa3 flex items-center justify-center"
+                    class="servis-col1-row3 pa3 flex justify-center items-start"
                 >
                     <a
                         href="#lokacije-dela"
                         class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between"
                     >
-                        Lokacije
+                        Lokacije dela
                         <span class="material-symbols-outlined ml2"
                             >arrow_downward</span
                         >
                     </a>
                 </div>
 
-                <!-- Mobile Order 7 (was 2) -->
+                <!-- Mobile Order 4 -->
                 <div
-                    class="servis-col1-row1 pv3 ph5 w-100 h-100 object-contain br3"
+                    class="servis-col2-3-span pa4 flex justify-center items-center relative"
                 >
                     <img
-                        src="img/2.jpg"
-                        alt="#"
-                        class="br3 mw-100 h-100 object-cover"
+                        src="img/3.jpg"
+                        alt=""
+                        class="montaza-slide w-auto h-100"
                     />
-                </div>
+                    <img
+                        src="img/2.jpg"
+                        alt=""
+                        class="montaza-slide w-auto h-100 dn"
+                    />
 
-                <!-- Mobile Order 8 -->
-                <div
-                    class="servis-col3-row3 pv3 ph5 w-100 h-100 object-contain br3"
-                >
-                    <img
-                        src="img/2.jpg"
-                        alt="#"
-                        class="br3 mw-100 h-100 object-cover"
-                    />
+                    <button
+                        class="slider-btn slider-left absolute ml4"
+                        onclick="plusDivs(-1)"
+                    >
+                        &#10094;
+                    </button>
+                    <button
+                        class="slider-btn slider-right absolute mr4"
+                        onclick="plusDivs(+1)"
+                    >
+                        &#10095;
+                    </button>
                 </div>
             </div>
         </section>
@@ -408,15 +362,6 @@
                     class="lokacija-col1-row1 pa3 flex justify-center items-center flex-column"
                 >
                     <h1 class="f2">Lokacije dela</h1>
-                    <a
-                        href="#servis"
-                        class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between"
-                    >
-                        Servis
-                        <span class="material-symbols-outlined ml2"
-                            >arrow_upward</span
-                        >
-                    </a>
                 </div>
                 <div
                     class="lokacija-col1-row2 ph3 ph5-ns pv3 flex justify-center items-center"
@@ -509,5 +454,63 @@
                 </div>
             </div>
         </section>
+
+        <script>
+            //navbar
+            document.addEventListener("DOMContentLoaded", function () {
+                const navLogo = document.getElementById("nav-logo");
+                const landingLogo = document.getElementById("landing-logo");
+
+                function checkLogoScroll() {
+                    const landingRect = landingLogo.getBoundingClientRect();
+
+                    if (landingRect.bottom <= 50) {
+                        // Scrolled past the big logo
+                        navLogo.style.opacity = "1"; // Show small nav logo
+                    } else {
+                        // Still at top
+                        navLogo.style.opacity = "0"; // Hide small nav logo
+                    }
+                }
+
+                window.addEventListener("scroll", checkLogoScroll);
+                window.addEventListener("resize", checkLogoScroll);
+                checkLogoScroll(); // run once on page load
+            });
+            // Show navbar after scrolling
+            window.addEventListener("scroll", () => {
+                const navbar = document.getElementById("navbar");
+                if (window.scrollY > 20) {
+                    navbar.classList.remove("dn");
+                } else {
+                    navbar.classList.add("dn");
+                }
+            });
+
+            // Burger menu toggle
+            const burgerBtn = document.getElementById("burger-btn");
+            const closeBtn = document.getElementById("close-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            if (burgerBtn && closeBtn && mobileMenu) {
+                burgerBtn.addEventListener("click", () => {
+                    mobileMenu.classList.remove("dn");
+                    mobileMenu.classList.add("flex");
+                });
+
+                closeBtn.addEventListener("click", () => {
+                    mobileMenu.classList.remove("flex");
+                    mobileMenu.classList.add("dn");
+                });
+
+                document.querySelectorAll(".mobile-link").forEach((link) => {
+                    link.addEventListener("click", () => {
+                        mobileMenu.classList.remove("flex");
+                        mobileMenu.classList.add("dn");
+                    });
+                });
+            }
+            //end navbar
+        </script>
     </body>
 </html>
