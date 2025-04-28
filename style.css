@@ -16,7 +16,11 @@ html {
 
 body {
     background-color: var(--gray);
-    font-family: "Poetsen One", sans-serif;
+    /* font-family: "Poetsen One", sans-serif; */
+    font-family: "Merriweather", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
     font-size: 1.2rem;
     color: var(--black);
 }
@@ -155,6 +159,10 @@ section > div:first-child {
     grid-auto-rows: auto;
     gap: 1rem;
     padding: 1rem;
+}
+
+.varjenje-layout .slider-btn {
+    background-color: var(--gray);
 }
 
 .varjenje-layout > div {
