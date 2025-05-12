@@ -1,30 +1,23 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8">
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0">
         <title>GC Front Page</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <!-- <link
             href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap"
             rel="stylesheet"
         /> -->
-        <link
-            href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
-            rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
 
-        <link
-            rel="stylesheet"
-            href="https://unpkg.com/tachyons/css/tachyons.min.css"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-            rel="stylesheet"
-        />
+        <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="style.css">
 
         <script>
             var slideIndex = 1;
@@ -50,31 +43,82 @@
                     x[slideIndex - 1].style.display = "block";
                 }
             }
+
+            var montazaSlideIndex = 1;
+            showDivs(montazaSlideIndex);
+
+            function plusDivs(n) {
+                showDivs((montazaSlideIndex += n));
+            }
+
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("montaza-slide");
+                if (n > x.length) {
+                    montazaSlideIndex = 1;
+                }
+                if (n < 1) {
+                    montazaSlideIndex = x.length;
+                }
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                if (x[montazaSlideIndex - 1] !== undefined) {
+                    x[montazaSlideIndex - 1].style.display = "block";
+                }
+            }
         </script>
     </head>
     <body class="ma0 pa0">
         <!-- Navigation Bar -->
         <header
             id="navbar"
-            class="fixed top-0 left-0 w-100 flex justify-between items-center bg-white-90 z-5 pa2"
-        >
+            class="fixed top-0 left-0 w-100 flex justify-between items-center bg-white-90 z-5 pa2">
             <!-- Logo -->
-            <div class="logo" id="nav-logo">
-                <a href="#o-nas"><img src="img/logo_gc.png" id="logo" /></a>
+            <div
+                class="logo"
+                id="nav-logo">
+                <a href="#o-nas">
+                    <img
+                        src="img/logo_gc.png"
+                        id="logo">
+                </a>
             </div>
 
             <!-- Desktop Navigation -->
             <nav class="desktop-menu dn flex-l pa3">
-                <a href="#varjenje" class="nav-link ml3">Varjenje</a>
-                <a href="#montaza" class="nav-link ml3">Montaža</a>
-                <a href="#servis" class="nav-link ml3">Servis</a>
-                <a href="#lokacije-dela" class="nav-link ml3">Lokacije Dela</a>
-                <a href="#kontakt" class="nav-link ml3">Kontakt</a>
+                <a
+                    href="#varjenje"
+                    class="nav-link ml3">
+                    Varjenje
+                </a>
+                <a
+                    href="#montaza"
+                    class="nav-link ml3">
+                    Montaža
+                </a>
+                <a
+                    href="#servis"
+                    class="nav-link ml3">
+                    Servis
+                </a>
+                <a
+                    href="#lokacije-dela"
+                    class="nav-link ml3">
+                    Lokacije Dela
+                </a>
+                <a
+                    href="#kontakt"
+                    class="nav-link ml3">
+                    Kontakt
+                </a>
             </nav>
 
             <!-- Mobile Burger (show on mobile, hide on desktop) -->
             <div class="burger flex dn-l items-center">
-                <button id="burger-btn" class="f3 bg-transparent bn pointer">
+                <button
+                    id="burger-btn"
+                    class="f3 bg-transparent bn pointer">
                     ☰
                 </button>
             </div>
@@ -83,16 +127,35 @@
         <!-- Mobile expanded menu (hidden by default) -->
         <div
             id="mobile-menu"
-            class="fixed top-0 right-0 w-100 h-100 bg-white flex-column items-center justify-center dn z-4"
-        >
-            <a href="#varjenje" class="mobile-link mb3 f3">Varjenje</a>
-            <a href="#montaza" class="mobile-link mb3 f3">Montaža</a>
-            <a href="#servis" class="mobile-link mb3 f3">Servis</a>
-            <a href="#lokacije-dela" class="mobile-link mb3 f3"
-                >Lokacije Dela</a
-            >
-            <a href="#kontakt" class="mobile-link mb3 f3">Kontakt</a>
-            <button id="close-btn" class="mt4 f2 bg-transparent bn pointer">
+            class="fixed top-0 right-0 w-100 h-100 bg-white flex-column items-center justify-center dn z-4">
+            <a
+                href="#varjenje"
+                class="mobile-link mb3 f3">
+                Varjenje
+            </a>
+            <a
+                href="#montaza"
+                class="mobile-link mb3 f3">
+                Montaža
+            </a>
+            <a
+                href="#servis"
+                class="mobile-link mb3 f3">
+                Servis
+            </a>
+            <a
+                href="#lokacije-dela"
+                class="mobile-link mb3 f3">
+                Lokacije Dela
+            </a>
+            <a
+                href="#kontakt"
+                class="mobile-link mb3 f3">
+                Kontakt
+            </a>
+            <button
+                id="close-btn"
+                class="mt4 f2 bg-transparent bn pointer">
                 ✕
             </button>
         </div>
@@ -101,8 +164,12 @@
         <section id="o-nas">
             <div class="landing-layout pa4">
                 <!-- Mobile Order 1 -->
-                <div class="col1-row1 pa3 logo-container" id="landing-logo">
-                    <img src="img/logo_gc.png" id="logo" />
+                <div
+                    class="col1-row1 pa3 logo-container"
+                    id="landing-logo">
+                    <img
+                        src="img/logo_gc.png"
+                        id="logo">
                 </div>
 
                 <!-- Mobile Order 2 -->
@@ -116,31 +183,20 @@
                 </div>
 
                 <!-- Mobile Order 3 -->
-                <div
-                    class="ph3 ph5-ns pv3 flex flex-column items-start col1-row2-span-ns"
-                >
-                    <h2 class="f2 fw7 mb3 landing-title">
-                        MONTAŽA JEKLENIH POSTROJENJ GC s.p.
-                    </h2>
+                <div class="ph3 ph5-ns pv3 flex flex-column items-start col1-row2-span-ns">
+                    <h2 class="f2 fw7 mb3 landing-title">MONTAŽA JEKLENIH POSTROJENJ GC s.p.</h2>
                     <a
                         href="#varjenje"
-                        class="navigation-button inline-flex items-center no-underline dark-blue f4 fw5 justify-between"
-                    >
+                        class="navigation-button inline-flex items-center no-underline dark-blue f4 fw5 justify-between">
                         Varjenje
-                        <span class="material-symbols-outlined ml2"
-                            >arrow_downward</span
-                        >
+                        <span class="material-symbols-outlined ml2">arrow_downward</span>
                     </a>
                 </div>
                 <!-- Mobile Order 4 -->
                 <div class="col1-row3 pa3 relative">
-                    <span
-                        class="absolute left-0 bottom-0 pa3 inline-flex items-center f5"
-                    >
-                        Ljubljana
-                        <span class="material-symbols-outlined ml2"
-                            >location_on</span
-                        >
+                    <span class="absolute left-0 bottom-0 pa3 inline-flex items-center f5">
+                        Dobrnič
+                        <span class="material-symbols-outlined ml2">location_on</span>
                     </span>
                 </div>
 
@@ -153,14 +209,11 @@
                 </div>
 
                 <!-- Mobile Order 6 -->
-                <div
-                    class="col3-image flex items-center justify-center w-hidden pa2"
-                >
+                <div class="col3-image flex items-center justify-center w-hidden pa2">
                     <img
                         src="img/initial.png"
                         alt="GC"
-                        class="w-auto h-auto br3"
-                    />
+                        class="w-auto h-auto br3">
                 </div>
             </div>
         </section>
@@ -169,56 +222,39 @@
         <section id="varjenje">
             <div class="varjenje-layout pa4">
                 <!-- Mobile Order 1-3 -->
-                <div
-                    class="varjenje-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title"
-                >
+                <div class="varjenje-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title">
                     <h1 class="f2">Varjenje</h1>
                 </div>
-                <div
-                    class="varjenje-col1-row2 ph3 ph5-ns pv3 flex items-center justify-center lh-copy"
-                >
-                    Varjenje MIG, MAG, TIG postopki. <br />
+                <div class="varjenje-col1-row2 ph3 ph5-ns pv3 flex items-center justify-center lh-copy">
+                    Varjenje MIG, MAG, TIG postopki.
+                    <br>
                     Varimo jekla, inox, konstrukcije.
                 </div>
-                <div
-                    class="varjenje-col1-row3 pa3 flex justify-center items-start"
-                >
+                <div class="varjenje-col1-row3 pa3 flex justify-center items-start">
                     <a
                         href="#montaza"
-                        class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between"
-                    >
+                        class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between">
                         Montaža
-                        <span class="material-symbols-outlined ml2"
-                            >arrow_downward</span
-                        >
+                        <span class="material-symbols-outlined ml2">arrow_downward</span>
                     </a>
                 </div>
 
                 <!-- Mobile Order 4 -->
-                <div
-                    class="varjenje-col2-3-span pa4 flex justify-center items-center relative"
-                >
+                <div class="varjenje-col2-3-span pa4 flex justify-center items-center relative">
                     <img
-                        src="img/3.jpg"
-                        alt=""
-                        class="varjenje-slide w-auto h-100"
-                    />
-                    <img
-                        src="img/2.jpg"
-                        alt=""
-                        class="varjenje-slide w-auto h-100 dn"
-                    />
+                        src="img/servis.jpg"
+                        alt
+                        class="varjenje-slide w-auto h-100">
+                   
 
                     <button
                         class="slider-btn slider-left absolute ml4"
-                        onclick="plusDivs(-1)"
-                    >
+                        onclick="plusDivs(-1)">
                         &#10094;
                     </button>
                     <button
                         class="slider-btn slider-right absolute mr4"
-                        onclick="plusDivs(+1)"
-                    >
+                        onclick="plusDivs(+1)">
                         &#10095;
                     </button>
                 </div>
@@ -229,14 +265,10 @@
         <section id="montaza">
             <div class="montaza-layout pa4">
                 <!-- Mobile Order 1-3 -->
-                <div
-                    class="montaza-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title"
-                >
+                <div class="montaza-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title">
                     <h1 class="f2">Montaža</h1>
                 </div>
-                <div
-                    class="montaza-col1-row2 ph3 ph5-ns pv3 flex items-center justify-center lh-copy"
-                >
+                <div class="montaza-col1-row2 ph3 ph5-ns pv3 flex items-center justify-center lh-copy">
                     <ol class="ma0">
                         <li>Montaža manjših mehanskih komponent</li>
                         <li>Montaža konstrukcij</li>
@@ -250,45 +282,58 @@
                         </li>
                     </ol>
                 </div>
-                <div
-                    class="montaza-col1-row3 pa3 flex justify-center items-start"
-                >
+                <div class="montaza-col1-row3 pa3 flex justify-center items-start">
                     <a
                         href="#servis"
-                        class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between"
-                    >
+                        class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between">
                         Servis
-                        <span class="material-symbols-outlined ml2"
-                            >arrow_downward</span
-                        >
+                        <span class="material-symbols-outlined ml2">arrow_downward</span>
                     </a>
                 </div>
 
                 <!-- Mobile Order 4 -->
-                <div
-                    class="montaza-col2-3-span pa4 flex justify-center items-center relative"
-                >
+                <div class="montaza-col2-3-span pa4 flex justify-center items-center relative">
                     <img
-                        src="img/3.jpg"
-                        alt=""
-                        class="montaza-slide w-auto h-100"
-                    />
+                        src="img/montaza_1.jpg"
+                        alt
+                        class="montaza-slide w-auto h-100">
                     <img
-                        src="img/2.jpg"
-                        alt=""
-                        class="montaza-slide w-auto h-100 dn"
-                    />
+                        src="img/montaza_2.jpg"
+                        alt
+                        class="montaza-slide w-auto h-100 dn">
+                    <img
+                        src="img/montaza_3.jpg"
+                        alt
+                        class="montaza-slide w-auto h-100 dn">
+                    <img
+                        src="img/montaza_4.jpg"
+                        alt
+                        class="montaza-slide w-auto h-100 dn">
+                    <img
+                        src="img/montaza_5.jpg"
+                        alt
+                        class="montaza-slide w-auto h-100 dn">
+                    <img
+                        src="img/montaza_6.jpg"
+                        alt
+                        class="montaza-slide w-auto h-100 dn">
+                    <img
+                        src="img/montaza_7.jpg"
+                        alt
+                        class="montaza-slide w-auto h-100 dn">
+                    <img
+                        src="img/montaza_8.jpg"
+                        alt
+                        class="montaza-slide w-auto h-100 dn">
 
                     <button
                         class="slider-btn slider-left absolute ml4"
-                        onclick="plusDivs(-1)"
-                    >
+                        onclick="plusDivs(-1)">
                         &#10094;
                     </button>
                     <button
                         class="slider-btn slider-right absolute mr4"
-                        onclick="plusDivs(+1)"
-                    >
+                        onclick="plusDivs(+1)">
                         &#10095;
                     </button>
                 </div>
@@ -299,61 +344,31 @@
         <section id="servis">
             <div class="servis-layout pa4">
                 <!-- Mobile Order 1-3 -->
-                <div
-                    class="servis-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title"
-                >
+                <div class="servis-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title">
                     <h1 class="f2">Servis</h1>
                 </div>
-                <div
-                    class="servis-col1-row2 ph3 ph5-ns pv3 flex flex-column items-center justify-center lh-copy"
-                >
+                <div class="servis-col1-row2 ph3 ph5-ns pv3 flex flex-column items-center justify-center lh-copy">
                     <p class="mb3">
                         Zavedamo se, da le hitra in strokovna pomoč zagotavlja
                         učinkovito delo z našimi izdelki. Zato pozornost
                         posvečamo tudi poprodajnemu sodelovanju.
                     </p>
                 </div>
-                <div
-                    class="servis-col1-row3 pa3 flex justify-center items-start"
-                >
+                <div class="servis-col1-row3 pa3 flex justify-center items-start">
                     <a
                         href="#lokacije-dela"
-                        class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between"
-                    >
+                        class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between">
                         Lokacije dela
-                        <span class="material-symbols-outlined ml2"
-                            >arrow_downward</span
-                        >
+                        <span class="material-symbols-outlined ml2">arrow_downward</span>
                     </a>
                 </div>
 
                 <!-- Mobile Order 4 -->
-                <div
-                    class="servis-col2-3-span pa4 flex justify-center items-center relative"
-                >
+                <div class="servis-col2-3-span pa4 flex justify-center items-center relative">
                     <img
-                        src="img/3.jpg"
-                        alt=""
-                        class="montaza-slide w-auto h-100"
-                    />
-                    <img
-                        src="img/2.jpg"
-                        alt=""
-                        class="montaza-slide w-auto h-100 dn"
-                    />
-
-                    <button
-                        class="slider-btn slider-left absolute ml4"
-                        onclick="plusDivs(-1)"
-                    >
-                        &#10094;
-                    </button>
-                    <button
-                        class="slider-btn slider-right absolute mr4"
-                        onclick="plusDivs(+1)"
-                    >
-                        &#10095;
-                    </button>
+                        src="img/servis.jpg"
+                        alt
+                        class="w-auto h-100">
                 </div>
             </div>
         </section>
@@ -362,28 +377,19 @@
         <section id="lokacije-dela">
             <div class="lokacija-layout pa4">
                 <!-- Mobile Order 1-3 -->
-                <div
-                    class="lokacija-col1-row1 pa3 flex justify-center items-center flex-column"
-                >
+                <div class="lokacija-col1-row1 pa3 flex justify-center items-center flex-column">
                     <h1 class="f2">Lokacije dela</h1>
                 </div>
-                <div
-                    class="lokacija-col1-row2 ph3 ph5-ns pv3 flex justify-center items-center"
-                >
+                <div class="lokacija-col1-row2 ph3 ph5-ns pv3 flex justify-center items-center">
                     Trenutno smo prisotni v državah: Belgija, Nizozemska,
                     Nemčija, Francija, Slovenija, Hrvaška.
                 </div>
-                <div
-                    class="lokacija-col1-row3 pa5 pb6 flex justify-center items-end"
-                >
+                <div class="lokacija-col1-row3 pa5 pb6 flex justify-center items-end">
                     <a
                         href="#kontakt"
-                        class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between"
-                    >
+                        class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between">
                         Kontakt
-                        <span class="material-symbols-outlined ml2"
-                            >arrow_downward</span
-                        >
+                        <span class="material-symbols-outlined ml2">arrow_downward</span>
                     </a>
                 </div>
 
@@ -392,8 +398,7 @@
                     <img
                         src="img/europe_custom_map.svg"
                         alt="Lokacije dela - Evropa"
-                        class="w-100 h-100 object-contain"
-                    />
+                        class="w-100 h-100 object-contain">
                 </div>
             </div>
         </section>
@@ -402,40 +407,39 @@
         <section id="kontakt">
             <div class="kontakt-layout pa4">
                 <!-- Mobile Order 1-3 -->
-                <div
-                    class="kontakt-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title"
-                >
+                <div class="kontakt-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title">
                     <h1 class="f2">Kontakt</h1>
                 </div>
-                <div
-                    class="kontakt-col1-row2 ph3 ph5-ns pv3 flex items-center justify-center lh-copy"
-                >
+                <div class="kontakt-col1-row2 ph3 ph5-ns pv3 flex items-center justify-center lh-copy">
                     <div>
-                        Naslov: <br />
-                        Telefon: 00 386 41 844 863<br />
+                        Gregor Cesar
+                        <br>
+                        Telefon:
+                        <a
+                            href="tel:+38640166095"
+                            class="kontakt-link">
+                            00 386 40 166 095
+                        </a>
+                        <br>
                         Email:
-                        <a href="mailto:mjpgc.prokurist@gmail.com" class="email"
-                            >mjpgc.prokurist@gmail.com</a
-                        ><br />
-                        Delovni čas:<br />
-                        Ponedeljek - Petek: 08:00 - 16:00<br />
-                        Sobota, Nedelja: Zaprto
+                        <a
+                            href="mailto:info.mjpgc@gmail.com"
+                            class="kontakt-link">
+                            info.mjpgc@gmail.com
+                        </a>
                     </div>
                 </div>
-                <div
-                    class="kontakt-col1-row3 pa3 flex justify-center items-start"
-                >
+                <div class="kontakt-col1-row3 pa3 flex justify-center items-start">
                     <img
                         src="img/logo_gc.png"
                         alt="GC machinery showcase"
-                        class="w-auto h-auto br3"
-                    />
+                        class="w-auto h-auto br3">
                 </div>
 
                 <!-- Mobile Order 4 -->
                 <div class="kontakt-col2-3-span">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2762.288305408952!2d14.5057511155839!3d46.05694697911269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476532919ccc123b%3A0x9c4c88b9adf8d0c9!2sLjubljana!5e0!3m2!1ssl!2ssi!4v1616066554875!5m2!1ssl!2ssi"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2762.288305408952!2d14.8156!3d45.9334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476532919ccc123b%3A0x9c4c88b9adf8d0c9!2sRde%C4%8Di%20Kal%208%2C%208211%20Dobrni%C4%8D!5e0!3m2!1ssl!2ssi!4v1616066554875!5m2!1ssl!2ssi"
                         style="
                             border: 0;
                             border-radius: 1rem;
@@ -443,9 +447,8 @@
                             height: 100%;
                             object-fit: cover;
                         "
-                        allowfullscreen=""
-                        loading="lazy"
-                    ></iframe>
+                        allowfullscreen
+                        loading="lazy"></iframe>
                 </div>
             </div>
         </section>
