@@ -410,12 +410,91 @@ section > div:first-child {
 }
 /* End Section Lokacija dela */
 
-/* Section kontakt */
+/* Section najem-bagrov */
 
-#kontakt {
+#najem-bagrov {
   background-color: var(--dark);
   color: var(--gray);
 }
+
+.najem-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.najem-layout > div {
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.najem-layout img {
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.najem-layout .slider-left {
+  top: 50%;
+  left: 0%;
+  transform: translate(0%, -50%);
+}
+
+.najem-layout .slider-right {
+  top: 50%;
+  right: 0%;
+  transform: translate(0%, -50%);
+}
+
+@media screen and (min-width: 768px) {
+  .najem-layout {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    gap: 0;
+  }
+
+  .najem-col1-row1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .najem-col1-row2 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .najem-col1-row3 {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .najem-col1-row3 img {
+    width: 230px;
+  }
+
+  .najem-col2-3-span {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 3;
+  }
+}
+
+#najem-bagrov .navigation-button {
+  color: var(--dark);
+  background-color: var(--gray);
+}
+
+#najem-bagrov .landing-title {
+  color: var(--orange);
+}
+
+/* End section najem-bagrov */
+
+/* Section kontakt */
 
 .kontakt-layout {
   display: grid;
@@ -469,10 +548,6 @@ section > div:first-child {
 #kontakt .navigation-button {
   color: var(--dark);
   background-color: var(--gray);
-}
-
-#kontakt .landing-title {
-  color: var(--orange);
 }
 
 .kontakt-link {

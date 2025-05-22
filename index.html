@@ -20,52 +20,28 @@
         <link rel="stylesheet" href="style.css">
 
         <script>
-            var slideIndex = 1;
-            showDivs(slideIndex);
-
-            function plusDivs(n) {
-                showDivs((slideIndex += n));
+            var slideIndexes = {
+                'montaza-slide': 1,
+                'najem-slide': 1
             }
 
-            function showDivs(n) {
-                var i;
-                var x = document.getElementsByClassName("varjenje-slide");
-                if (n > x.length) {
-                    slideIndex = 1;
-                }
-                if (n < 1) {
-                    slideIndex = x.length;
-                }
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none";
-                }
-                if (x[slideIndex - 1] !== undefined) {
-                    x[slideIndex - 1].style.display = "block";
-                }
+            function plusDivs(slide, n) {
+                slideIndexes[slide] = (slideIndexes[slide] || 1) + n;
+                showDivs(slide, slideIndexes[slide]);
             }
 
-            var montazaSlideIndex = 1;
-            showDivs(montazaSlideIndex);
+            function showDivs(slide, n) {
+                var slides = document.getElementsByClassName(slide);
+                if (slides.length === 0) return;
 
-            function plusDivs(n) {
-                showDivs((montazaSlideIndex += n));
-            }
+                if (n > slides.length) slideIndexes[slide] = 1;
+                if (n < 1) slideIndexes[slide] = slides.length;
 
-            function showDivs(n) {
-                var i;
-                var x = document.getElementsByClassName("montaza-slide");
-                if (n > x.length) {
-                    montazaSlideIndex = 1;
+                for (var i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
                 }
-                if (n < 1) {
-                    montazaSlideIndex = x.length;
-                }
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none";
-                }
-                if (x[montazaSlideIndex - 1] !== undefined) {
-                    x[montazaSlideIndex - 1].style.display = "block";
-                }
+
+                slides[slideIndexes[slide] - 1].style.display = "block";
             }
         </script>
     </head>
@@ -108,6 +84,11 @@
                     Lokacije Dela
                 </a>
                 <a
+                    href="#najem-bagrov"
+                    class="nav-link ml3">
+                    Najem bagrov
+                </a>
+                <a
                     href="#kontakt"
                     class="nav-link ml3">
                     Kontakt
@@ -147,6 +128,11 @@
                 href="#lokacije-dela"
                 class="mobile-link mb3 f3">
                 Lokacije Dela
+            </a>
+            <a
+                href="#najem-bagrov"
+                class="mobile-link mb3 f3">
+                Najem bagrov
             </a>
             <a
                 href="#kontakt"
@@ -211,7 +197,7 @@
                 <!-- Mobile Order 6 -->
                 <div class="col3-image flex items-center justify-center w-hidden pa2">
                     <img
-                        src="img/initial.png"
+                        src="img/najem_2.jpg"
                         alt="GC"
                         class="w-auto h-auto br3">
                 </div>
@@ -245,18 +231,6 @@
                         src="img/servis.jpg"
                         alt
                         class="varjenje-slide w-auto h-100">
-                   
-
-                    <button
-                        class="slider-btn slider-left absolute ml4"
-                        onclick="plusDivs(-1)">
-                        &#10094;
-                    </button>
-                    <button
-                        class="slider-btn slider-right absolute mr4"
-                        onclick="plusDivs(+1)">
-                        &#10095;
-                    </button>
                 </div>
             </div>
         </section>
@@ -328,12 +302,12 @@
 
                     <button
                         class="slider-btn slider-left absolute ml4"
-                        onclick="plusDivs(-1)">
+                        onclick="plusDivs('montaza-slide', -1)">
                         &#10094;
                     </button>
                     <button
                         class="slider-btn slider-right absolute mr4"
-                        onclick="plusDivs(+1)">
+                        onclick="plusDivs('montaza-slide', +1)">
                         &#10095;
                     </button>
                 </div>
@@ -386,9 +360,9 @@
                 </div>
                 <div class="lokacija-col1-row3 pa5 pb6 flex justify-center items-end">
                     <a
-                        href="#kontakt"
+                        href="#najem-bagrov"
                         class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between">
-                        Kontakt
+                        Najem
                         <span class="material-symbols-outlined ml2">arrow_downward</span>
                     </a>
                 </div>
@@ -399,6 +373,59 @@
                         src="img/europe_custom_map.svg"
                         alt="Lokacije dela - Evropa"
                         class="w-100 h-100 object-contain">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section kontakt -->
+        <section id="najem-bagrov">
+            <div class="najem-layout pa4">
+                <!-- Mobile Order 1-3 -->
+                <div class="najem-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title">
+                    <h1 class="f2">Najem bagrov</h1>
+                </div>
+                <div class="najem-col1-row2 ph3 ph5-ns pv3 flex items-center justify-center lh-copy">
+                    <div>
+                        Na voljo:
+                        <br>
+                        <ul class="list ma0 pa0">
+                            <li>1,9 t</li>
+                            <li>3,6 t</li>
+                            <li>5,4 t</li>
+                        </ul>
+                        <br>
+                        Dolgoročni ali kratkoročni najem. Za info nas kontaktirajte.
+                    </div>
+                </div>
+                <div class="najem-col1-row3 pa3 flex justify-center items-start">
+                    <a
+                        href="#kontakt"
+                        class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between">
+                        Kontakt
+                        <span class="material-symbols-outlined ml2">arrow_downward</span>
+                    </a>
+                </div>
+                <!-- Mobile Order 4 -->
+                <div class="najem-col2-3-span pa4 flex justify-center items-center relative">
+                    <img
+                        src="img/najem_1.jpg"
+                        alt
+                        class="najem-slide w-auto h-100">
+                    <img
+                        src="img/najem_2.jpg"
+                        alt
+                        class="najem-slide w-auto h-100 dn">
+
+                    <button
+                        class="slider-btn slider-left absolute ml4"
+                        onclick="plusDivs('najem-slide',-1)">
+                        &#10094;
+                    </button>
+                    <button
+                        class="slider-btn slider-right absolute mr4"
+                        onclick="plusDivs('najem-slide',+1)">
+                        &#10095;
+                    </button>
                 </div>
             </div>
         </section>
