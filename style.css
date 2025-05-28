@@ -140,6 +140,11 @@ section > div:first-child {
   object-fit: contain;
 }
 
+.landing-layout .landing-image {
+    object-fit: cover;
+    max-height: 1200px;
+}
+
 .logo-container {
   width: 310px;
 }
