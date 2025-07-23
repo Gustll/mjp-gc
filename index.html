@@ -22,7 +22,8 @@
         <script>
             var slideIndexes = {
                 'montaza-slide': 1,
-                'najem-slide': 1
+                'najem-slide': 1,
+                'varjenje-slide': 1
             }
 
             function plusDivs(slide, n) {
@@ -227,10 +228,29 @@
 
                 <!-- Mobile Order 4 -->
                 <div class="varjenje-col2-3-span pa4 flex justify-center items-center relative">
-                    <!-- <img
+                    <img
                         src="img/varjenje_1.jpg"
                         alt
-                        class="varjenje-slide w-auto h-100"> -->
+                        class="varjenje-slide w-auto h-100">
+                    <img
+                        src="img/varjenje_2.jpg"
+                        alt
+                        class="varjenje-slide w-auto h-100 dn">
+                    <img
+                        src="img/varjenje_3.jpg"
+                        alt
+                        class="varjenje-slide w-auto h-100 dn">
+
+                    <button
+                        class="slider-btn slider-left absolute ml4"
+                        onclick="plusDivs('varjenje-slide', -1)">
+                        &#10094;
+                    </button>
+                    <button
+                        class="slider-btn slider-right absolute mr4"
+                        onclick="plusDivs('varjenje-slide', +1)">
+                        &#10095;
+                    </button>
                 </div>
             </div>
         </section>
