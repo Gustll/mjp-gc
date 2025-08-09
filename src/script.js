@@ -5,7 +5,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import en from "./locales/en.json";
 import si from "./locales/si.json";
 
-// Initialize i18next with language detection and fallback language set to 'sl'
+// Initialize i18next with language detection and fallback language set to 'si'
 i18next
   .use(LanguageDetector) // Detect language from browser settings or user preferences
   .init(
@@ -26,8 +26,18 @@ i18next
     () => {
       // After i18next initialization, translate the page
       translatePage();
-      // Ensure language selector is updated with the stored language on page load
-      updateLanguageSelector(i18next.language);
+
+      // Ensure language selector is updated with the stored language or default to browser language
+      const savedLanguage = localStorage.getItem("language");
+      if (savedLanguage) {
+        updateLanguageSelector(savedLanguage); // Update language selector with saved language
+      } else {
+        const browserLanguage = navigator.language.split("-")[0]; // Get browser's default language (e.g., "en", "si")
+        const defaultLanguage = i18next.languages.includes(browserLanguage)
+          ? browserLanguage
+          : "si"; // Default to "si" if browser language is not supported
+        updateLanguageSelector(defaultLanguage); // Update language selector with the browser's language
+      }
     }
   );
 
@@ -50,7 +60,7 @@ document.getElementById("language-select").addEventListener("change", (e) => {
   });
 });
 
-// Update the language selector based on the stored language
+// Update the language selector based on the stored language or default to browser language
 function updateLanguageSelector(language) {
   const languageSelect = document.getElementById("language-select");
   languageSelect.value = language; // Set the value of the dropdown to the current language
@@ -70,5 +80,15 @@ if (savedLanguage) {
   i18next.changeLanguage(savedLanguage, () => {
     translatePage(); // Update the page language based on the stored language
     updateLanguageSelector(savedLanguage); // Update the language selector
+  });
+} else {
+  // If no language is saved, use the browser's language as a fallback
+  const browserLanguage = navigator.language.split("-")[0]; // Get the browser's language (e.g., "en", "si")
+  const defaultLanguage = i18next.languages.includes(browserLanguage)
+    ? browserLanguage
+    : "si"; // Default to "si" if unsupported
+  i18next.changeLanguage(defaultLanguage, () => {
+    translatePage(); // Update content based on default or browser language
+    updateLanguageSelector(defaultLanguage); // Update the language selector with the browser language
   });
 }
