@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "varjenje": "Varjenje",
+    "montaza": "Montaža",
+    "servis": "Servis",
+    "lokacije_dela": "Lokacije Dela",
+    "najem_bagrov": "Najem bagrov",
+    "kontakt": "Kontakt"
+  },
+  "about": {
+    "top": "Smo manjše podjetje v razvoju, prav zato vam lahko ponudimo kakovostne izdelke in storitve. Ukvarjamo se z montažo elektronike in hidravlike na kmetijsko ter gozdarsko mehanizacijo. Naše delo obsega delo v delavnici (montaža) ter delo na terenu (servisi). Prednost našega podjetja pa je hitra odzivnost.",
+    "bottom": "Nudimo kakovostno varjenje, montažo ter servisiranje naših izdelkov. Za vsako mehanizacijo se potrudimo, da je dovršena ter ugodena vašim željam in potrebam. Inovativnost pri izdelkih je naša značilnost."
+  },
+  "varjenje": {
+    "t1": "Varjenje MIG, MAG, TIG postopki.",
+    "t2": "Varimo jekla, inox, konstrukcije."
+  },
+  "montaza": {
+    "t1": "Montaža manjših mehanskih komponent",
+    "t2": "Montaža konstrukcij",
+    "t3": "Montaža centralnih mazalnih sistemov",
+    "t4": "Montaža pnevmatskih sistemov",
+    "t5": "Montaža hidravličnih sistemov",
+    "t6": "Montaža elektro vezave",
+    "t7": "Montaža rezervoarjev in črpalk za naftne derivate za privat stranke"
+  },
+  "servis": {
+    "t1": "Zavedamo se, da le hitra in strokovna pomoč zagotavlja učinkovito delo z našimi izdelki. Zato pozornost posvečamo tudi poprodajnemu sodelovanju."
+  },
+  "lokacije_dela": {
+    "t1": "Trenutno smo prisotni v državah: Belgija, Nizozemska, Nemčija, Francija, Slovenija, Hrvaška."
+  },
+  "najem_bagrov": {
+    "t1": "Na voljo:",
+    "t2": "Dolgoročni ali kratkoročni najem. Za info nas kontaktirajte."
+  },
+  "kontakt": {
+    "phone": "Telefon: ",
+    "email": "Email: "
+  }
+}

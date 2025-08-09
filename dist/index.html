@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0">
+        <title>MJP-GC</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- <link
+            href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap"
+            rel="stylesheet"
+        /> -->
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+
+        <script>
+            var slideIndexes = {
+                'montaza-slide': 1,
+                'najem-slide': 1,
+                'varjenje-slide': 1
+            }
+
+            function plusDivs(slide, n) {
+                slideIndexes[slide] = (slideIndexes[slide] || 1) + n;
+                showDivs(slide, slideIndexes[slide]);
+            }
+
+            function showDivs(slide, n) {
+                var slides = document.getElementsByClassName(slide);
+                if (slides.length === 0) return;
+
+                if (n > slides.length) slideIndexes[slide] = 1;
+                if (n < 1) slideIndexes[slide] = slides.length;
+
+                for (var i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+
+                slides[slideIndexes[slide] - 1].style.display = "block";
+            }
+        </script>
+      <script type="module" crossorigin src="/assets/index-CB9_0Dlh.js"></script>
+      <link rel="stylesheet" crossorigin href="/assets/index-AxNmjhKm.css">
+    </head>
+    <body class="ma0 pa0">
+        <!-- Navigation Bar -->
+        <header
+            id="navbar"
+            class="fixed top-0 left-0 w-100 flex justify-between items-center bg-white-90 z-5 pa2">
+            <!-- Logo -->
+            <div
+                class="logo"
+                id="nav-logo">
+                <a href="#o-nas">
+                    <img
+                        src="img/logo_gc.png"
+                        id="logo">
+                </a>
+            </div>
+
+            <select id="language-select">
+                <option value="sl">Slovenian</option>
+                <option value="en">English</option>
+            </select>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-menu dn flex-l pa3">
+                <a
+                    href="#varjenje"
+                    class="nav-link ml3">
+                    Varjenje
+                </a>
+                <a
+                    href="#montaza"
+                    data-key="nav.montaza"
+                    class="nav-link ml3">
+
+                </a>
+                <a
+                    href="#servis"
+                    class="nav-link ml3">
+                    Servis
+                </a>
+                <a
+                    href="#lokacije-dela"
+                    class="nav-link ml3">
+                    Lokacije Dela
+                </a>
+                <a
+                    href="#najem-bagrov"
+                    class="nav-link ml3">
+                    Najem bagrov
+                </a>
+                <a
+                    href="#kontakt"
+                    class="nav-link ml3">
+                    Kontakt
+                </a>
+            </nav>
+
+            <!-- Mobile Burger (show on mobile, hide on desktop) -->
+            <div class="burger flex dn-l items-center">
+                <button
+                    id="burger-btn"
+                    class="f3 bg-transparent bn pointer">
+                    ☰
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile expanded menu (hidden by default) -->
+        <div
+            id="mobile-menu"
+            class="fixed top-0 right-0 w-100 h-100 bg-white flex-column items-center justify-center dn z-4">
+            <a
+                href="#varjenje"
+                class="mobile-link mb3 f3">
+                Varjenje
+            </a>
+            <a
+                href="#montaza"
+                class="mobile-link mb3 f3">
+                Montaža
+            </a>
+            <a
+                href="#servis"
+                class="mobile-link mb3 f3">
+                Servis
+            </a>
+            <a
+                href="#lokacije-dela"
+                class="mobile-link mb3 f3">
+                Lokacije Dela
+            </a>
+            <a
+                href="#najem-bagrov"
+                class="mobile-link mb3 f3">
+                Najem bagrov
+            </a>
+            <a
+                href="#kontakt"
+                class="mobile-link mb3 f3">
+                Kontakt
+            </a>
+            <button
+                id="close-btn"
+                class="mt4 f2 bg-transparent bn pointer">
+                ✕
+            </button>
+        </div>
+
+        <!-- Initial landing layout -->
+        <section id="o-nas">
+            <div class="landing-layout pa4">
+                <!-- Mobile Order 1 -->
+                <div
+                    class="col1-row1 pa3 logo-container"
+                    id="landing-logo">
+                    <img
+                        src="img/logo_gc.png"
+                        id="logo">
+                </div>
+
+                <!-- Mobile Order 2 -->
+                <div class="col2-row1 pv3 pl3 pr5">
+                    Smo manjše podjetje v razvoju, prav zato vam lahko ponudimo
+                    kakovostne izdelke in storitve. Ukvarjamo se z montažo
+                    elektronike in hidravlike na kmetijsko ter gozdarsko
+                    mehanizacijo. Naše delo obsega delo v delavnici (montaža)
+                    ter delo na terenu (servisi). Prednost našega podjetja pa je
+                    hitra odzivnost.
+                </div>
+
+                <!-- Mobile Order 3 -->
+                <div class="ph3 ph5-ns pv3 flex flex-column items-start col1-row2-span-ns">
+                    <h2 class="f2 fw7 mb3 landing-title">MONTAŽA JEKLENIH POSTROJENJ GC s.p.</h2>
+                    <a
+                        href="#varjenje"
+                        class="navigation-button inline-flex items-center no-underline dark-blue f4 fw5 justify-between">
+                        Varjenje
+                        <span class="material-symbols-outlined ml2">arrow_downward</span>
+                    </a>
+                </div>
+                <!-- Mobile Order 4 -->
+                <div class="col1-row3 pa3 relative">
+                    <span class="absolute left-0 bottom-0 pa3 inline-flex items-center f5">
+                        Dobrnič
+                        <span class="material-symbols-outlined ml2">location_on</span>
+                    </span>
+                </div>
+
+                <!-- Mobile Order 5 -->
+                <div class="col2-row3 pv3 pl3 pr5">
+                    Nudimo kakovostno varjenje, montažo ter servisiranje naših
+                    izdelkov. Za vsako mehanizacijo se potrudimo, da je dovršena
+                    ter ugodena vašim željam in potrebam. Inovativnost pri
+                    izdelkih je naša značilnost.
+                </div>
+
+                <!-- Mobile Order 6 -->
+                <div class="col3-image flex items-center justify-center w-hidden pa2">
+                    <img
+                        src="img/servis.jpg"
+                        alt="GC"
+                        class="w-auto h-100 br3 landing-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section varjenje -->
+        <section id="varjenje">
+            <div class="varjenje-layout pa4">
+                <!-- Mobile Order 1-3 -->
+                <div class="varjenje-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title">
+                    <h1 class="f2">Varjenje</h1>
+                </div>
+                <div class="varjenje-col1-row2 ph3 ph5-ns pv3 flex items-center justify-center lh-copy">
+                    Varjenje MIG, MAG, TIG postopki.
+                    <br>
+                    Varimo jekla, inox, konstrukcije.
+                </div>
+                <div class="varjenje-col1-row3 pa3 flex justify-center items-start">
+                    <a
+                        href="#montaza"
+                        class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between">
+                        Montaža
+                        <span class="material-symbols-outlined ml2">arrow_downward</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Order 4 -->
+                <div class="varjenje-col2-3-span pa4 flex justify-center items-center relative">
+                    <img
+                        src="img/varjenje_1.jpg"
+                        alt
+                        class="varjenje-slide w-auto h-100">
+                    <img
+                        src="img/varjenje_2.jpg"
+                        alt
+                        class="varjenje-slide w-auto h-100 dn">
+                    <img
+                        src="img/varjenje_3.jpg"
+                        alt
+                        class="varjenje-slide w-auto h-100 dn">
+
+                    <button
+                        class="slider-btn slider-left absolute ml4"
+                        onclick="plusDivs('varjenje-slide', -1)">
+                        &#10094;
+                    </button>
+                    <button
+                        class="slider-btn slider-right absolute mr4"
+                        onclick="plusDivs('varjenje-slide', +1)">
+                        &#10095;
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section montaza -->
+        <section id="montaza">
+            <div class="montaza-layout pa4">
+                <!-- Mobile Order 1-3 -->
+                <div class="montaza-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title">
+                    <h1 class="f2">Montaža</h1>
+                </div>
+                <div class="montaza-col1-row2 ph3 ph5-ns pv3 flex items-center justify-center lh-copy">
+                    <ol class="ma0">
+                        <li>Montaža manjših mehanskih komponent</li>
+                        <li>Montaža konstrukcij</li>
+                        <li>Montaža centralnih mazalnih sistemov</li>
+                        <li>Montaža pnevmatskih sistemov</li>
+                        <li>Montaža hidravličnih sistemov</li>
+                        <li>Montaža elektro vezave</li>
+                        <li>
+                            Montaža rezervoarjev in črpalk za naftne derivate za
+                            privat stranke
+                        </li>
+                    </ol>
+                </div>
+                <div class="montaza-col1-row3 pa3 flex justify-center items-start">
+                    <a
+                        href="#servis"
+                        class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between">
+                        Servis
+                        <span class="material-symbols-outlined ml2">arrow_downward</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Order 4 -->
+                <div class="montaza-col2-3-span pa4 flex justify-center items-center relative">
+                    <img
+                        src="img/montaza_1.jpg"
+                        alt
+                        class="montaza-slide w-auto h-100">
+                    <img
+                        src="img/montaza_2.jpg"
+                        alt
+                        class="montaza-slide w-auto h-100 dn">
+                    <img
+                        src="img/montaza_3.jpg"
+                        alt
+                        class="montaza-slide w-auto h-100 dn">
+                    <img
+                        src="img/montaza_4.jpg"
+                        alt
+                        class="montaza-slide w-auto h-100 dn">
+                    <img
+                        src="img/montaza_5.jpg"
+                        alt
+                        class="montaza-slide w-auto h-100 dn">
+                    <img
+                        src="img/montaza_6.jpg"
+                        alt
+                        class="montaza-slide w-auto h-100 dn">
+                    <img
+                        src="img/montaza_7.jpg"
+                        alt
+                        class="montaza-slide w-auto h-100 dn">
+                    <img
+                        src="img/montaza_8.jpg"
+                        alt
+                        class="montaza-slide w-auto h-100 dn">
+
+                    <button
+                        class="slider-btn slider-left absolute ml4"
+                        onclick="plusDivs('montaza-slide', -1)">
+                        &#10094;
+                    </button>
+                    <button
+                        class="slider-btn slider-right absolute mr4"
+                        onclick="plusDivs('montaza-slide', +1)">
+                        &#10095;
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section servis -->
+        <section id="servis">
+            <div class="servis-layout pa4">
+                <!-- Mobile Order 1-3 -->
+                <div class="servis-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title">
+                    <h1 class="f2">Servis</h1>
+                </div>
+                <div class="servis-col1-row2 ph3 ph5-ns pv3 flex flex-column items-center justify-center lh-copy">
+                    <p class="mb3">
+                        Zavedamo se, da le hitra in strokovna pomoč zagotavlja
+                        učinkovito delo z našimi izdelki. Zato pozornost
+                        posvečamo tudi poprodajnemu sodelovanju.
+                    </p>
+                </div>
+                <div class="servis-col1-row3 pa3 flex justify-center items-start">
+                    <a
+                        href="#lokacije-dela"
+                        class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between">
+                        Lokacije dela
+                        <span class="material-symbols-outlined ml2">arrow_downward</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Order 4 -->
+                <div class="servis-col2-3-span pa4 flex justify-center items-center relative">
+                    <img
+                        src="img/servis.jpg"
+                        alt
+                        class="w-auto h-100">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section lokacija dela -->
+        <section id="lokacije-dela">
+            <div class="lokacija-layout pa4">
+                <!-- Mobile Order 1-3 -->
+                <div class="lokacija-col1-row1 pa3 flex justify-center items-center flex-column">
+                    <h1 class="f2">Lokacije dela</h1>
+                </div>
+                <div class="lokacija-col1-row2 ph3 ph5-ns pv3 flex justify-center items-center">
+                    Trenutno smo prisotni v državah: Belgija, Nizozemska,
+                    Nemčija, Francija, Slovenija, Hrvaška.
+                </div>
+                <div class="lokacija-col1-row3 pa5 pb6 flex justify-center items-start">
+                    <a
+                        href="#najem-bagrov"
+                        class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between">
+                        Najem
+                        <span class="material-symbols-outlined ml2">arrow_downward</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Order 4 -->
+                <div class="lokacija-col2-3-span">
+                    <img
+                        src="img/europe_custom_map.svg"
+                        alt="Lokacije dela - Evropa"
+                        class="w-100 h-100 object-contain">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section kontakt -->
+        <section id="najem-bagrov">
+            <div class="najem-layout pa4">
+                <!-- Mobile Order 1-3 -->
+                <div class="najem-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title">
+                    <h1 class="f2">Najem bagrov</h1>
+                </div>
+                <div class="najem-col1-row2 ph3 ph5-ns pv3 flex items-center justify-center lh-copy">
+                    <div>
+                        Na voljo:
+                        <br>
+                        <ul class="list ma0 pa0">
+                            <li>1,9 t</li>
+                            <li>3,6 t</li>
+                            <li>5,4 t</li>
+                        </ul>
+                        <br>
+                        Dolgoročni ali kratkoročni najem. Za info nas kontaktirajte.
+                    </div>
+                </div>
+                <div class="najem-col1-row3 pa3 flex justify-center items-start">
+                    <a
+                        href="#kontakt"
+                        class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between">
+                        Kontakt
+                        <span class="material-symbols-outlined ml2">arrow_downward</span>
+                    </a>
+                </div>
+                <!-- Mobile Order 4 -->
+                <div class="najem-col2-3-span pa4 flex justify-center items-center relative">
+                    <img
+                        src="img/najem_1.jpg"
+                        alt
+                        class="najem-slide w-auto h-100">
+                    <img
+                        src="img/najem_2.jpg"
+                        alt
+                        class="najem-slide w-auto h-100 dn">
+
+                    <button
+                        class="slider-btn slider-left absolute ml4"
+                        onclick="plusDivs('najem-slide',-1)">
+                        &#10094;
+                    </button>
+                    <button
+                        class="slider-btn slider-right absolute mr4"
+                        onclick="plusDivs('najem-slide',+1)">
+                        &#10095;
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section kontakt -->
+        <section id="kontakt">
+            <div class="kontakt-layout pa4">
+                <!-- Mobile Order 1-3 -->
+                <div class="kontakt-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title">
+                    <h1 class="f2">Kontakt</h1>
+                </div>
+                <div class="kontakt-col1-row2 ph3 ph5-ns pv3 flex items-center justify-center lh-copy">
+                    <div>
+                        Gregor Cesar
+                        <br>
+                        Telefon:
+                        <a
+                            href="tel:+38640166095"
+                            class="kontakt-link">
+                            00 386 40 166 095
+                        </a>
+                        <br>
+                        Email:
+                        <a
+                            href="mailto:info.mjpgc@gmail.com"
+                            class="kontakt-link">
+                            info.mjpgc@gmail.com
+                        </a>
+                    </div>
+                </div>
+                <div class="kontakt-col1-row3 pa3 flex justify-center items-start">
+                    <img
+                        src="img/logo_gc.png"
+                        alt="GC machinery showcase"
+                        class="w-auto h-auto br3">
+                </div>
+
+                <!-- Mobile Order 4 -->
+                <div class="kontakt-col2-3-span">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2762.288305408952!2d14.8156!3d45.9334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476532919ccc123b%3A0x9c4c88b9adf8d0c9!2sRde%C4%8Di%20Kal%208%2C%208211%20Dobrni%C4%8D!5e0!3m2!1ssl!2ssi!4v1616066554875!5m2!1ssl!2ssi"
+                        style="
+                            border: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        "
+                        allowfullscreen
+                        loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            //navbar
+            document.addEventListener("DOMContentLoaded", function () {
+                const navLogo = document.getElementById("nav-logo");
+                const landingLogo = document.getElementById("landing-logo");
+
+                function checkLogoScroll() {
+                    const landingRect = landingLogo.getBoundingClientRect();
+
+                    if (landingRect.bottom <= 50) {
+                        // Scrolled past the big logo
+                        navLogo.style.opacity = "1"; // Show small nav logo
+                    } else {
+                        // Still at top
+                        navLogo.style.opacity = "0"; // Hide small nav logo
+                    }
+                }
+
+                window.addEventListener("scroll", checkLogoScroll);
+                window.addEventListener("resize", checkLogoScroll);
+                checkLogoScroll(); // run once on page load
+            });
+            // Show navbar after scrolling
+            window.addEventListener("scroll", () => {
+                const navbar = document.getElementById("navbar");
+                if (window.scrollY > 20) {
+                    navbar.classList.remove("dn");
+                } else {
+                    navbar.classList.add("dn");
+                }
+            });
+
+            // Burger menu toggle
+            const burgerBtn = document.getElementById("burger-btn");
+            const closeBtn = document.getElementById("close-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            if (burgerBtn && closeBtn && mobileMenu) {
+                burgerBtn.addEventListener("click", () => {
+                    mobileMenu.classList.remove("dn");
+                    mobileMenu.classList.add("flex");
+                });
+
+                closeBtn.addEventListener("click", () => {
+                    mobileMenu.classList.remove("flex");
+                    mobileMenu.classList.add("dn");
+                });
+
+                document.querySelectorAll(".mobile-link").forEach((link) => {
+                    link.addEventListener("click", () => {
+                        mobileMenu.classList.remove("flex");
+                        mobileMenu.classList.add("dn");
+                    });
+                });
+            }
+            //end navbar
+        </script>
+    </body>
+</html>

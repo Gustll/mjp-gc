@@ -141,8 +141,8 @@ section > div:first-child {
 }
 
 .landing-layout .landing-image {
-    object-fit: cover;
-    max-height: 1200px;
+  object-fit: cover;
+  max-height: 1200px;
 }
 
 .logo-container {
@@ -598,4 +598,14 @@ section > div:first-child {
 #burger-btn,
 #close-btn {
   color: var(--black);
+}
+
+/* Styling for the custom language selector */
+
+.language-selector {
+  left: 150px;
+}
+
+#language-select {
+  background-color: var(--gray);
 }

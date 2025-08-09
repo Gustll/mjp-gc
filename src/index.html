@@ -16,9 +16,11 @@
 
         <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-
         <link rel="stylesheet" href="style.css">
 
+        <script
+            src="script.js"
+            type="module"></script>
         <script>
             var slideIndexes = {
                 'montaza-slide': 1,
@@ -62,37 +64,54 @@
                 </a>
             </div>
 
+            <div class="language-selector absolute">
+                <select
+                    id="language-select"
+                    class="language-dropdown f4 fw5 bn pointer">
+                    <option
+                        value="si"
+                        class="si">
+                        🇸🇮 SI
+                    </option>
+                    <option
+                        value="en"
+                        class="en">
+                        🇬🇧 EN
+                    </option>
+                </select>
+            </div>
+
             <!-- Desktop Navigation -->
             <nav class="desktop-menu dn flex-l pa3">
                 <a
                     href="#varjenje"
+                    data-i18n="nav.varjenje"
                     class="nav-link ml3">
-                    Varjenje
                 </a>
                 <a
                     href="#montaza"
+                    data-i18n="nav.montaza"
                     class="nav-link ml3">
-                    Montaža
                 </a>
                 <a
                     href="#servis"
+                    data-i18n="nav.servis"
                     class="nav-link ml3">
-                    Servis
                 </a>
                 <a
                     href="#lokacije-dela"
+                    data-i18n="nav.lokacije_dela"
                     class="nav-link ml3">
-                    Lokacije Dela
                 </a>
                 <a
                     href="#najem-bagrov"
+                    data-i18n="nav.najem_bagrov"
                     class="nav-link ml3">
-                    Najem bagrov
                 </a>
                 <a
                     href="#kontakt"
+                    data-i18n="nav.kontakt"
                     class="nav-link ml3">
-                    Kontakt
                 </a>
             </nav>
 
@@ -112,33 +131,34 @@
             class="fixed top-0 right-0 w-100 h-100 bg-white flex-column items-center justify-center dn z-4">
             <a
                 href="#varjenje"
+                data-i18n="nav.varjenje"
                 class="mobile-link mb3 f3">
-                Varjenje
             </a>
             <a
                 href="#montaza"
+                data-i18n="nav.montaza"
                 class="mobile-link mb3 f3">
-                Montaža
             </a>
             <a
                 href="#servis"
+                data-i18n="nav.servis"
                 class="mobile-link mb3 f3">
-                Servis
             </a>
             <a
                 href="#lokacije-dela"
+                data-i18n="nav.lokacije_dela"
                 class="mobile-link mb3 f3">
-                Lokacije Dela
             </a>
             <a
                 href="#najem-bagrov"
+                data-i18n="nav.najem_bagrov"
                 class="mobile-link mb3 f3">
-                Najem bagrov
             </a>
             <a
                 href="#kontakt"
+                data-i18n="nav.kontakt"
                 class="mobile-link mb3 f3">
-                Kontakt
+
             </a>
             <button
                 id="close-btn"
@@ -161,12 +181,7 @@
 
                 <!-- Mobile Order 2 -->
                 <div class="col2-row1 pv3 pl3 pr5">
-                    Smo manjše podjetje v razvoju, prav zato vam lahko ponudimo
-                    kakovostne izdelke in storitve. Ukvarjamo se z montažo
-                    elektronike in hidravlike na kmetijsko ter gozdarsko
-                    mehanizacijo. Naše delo obsega delo v delavnici (montaža)
-                    ter delo na terenu (servisi). Prednost našega podjetja pa je
-                    hitra odzivnost.
+                    <span data-i18n="about.top"></span>
                 </div>
 
                 <!-- Mobile Order 3 -->
@@ -175,7 +190,7 @@
                     <a
                         href="#varjenje"
                         class="navigation-button inline-flex items-center no-underline dark-blue f4 fw5 justify-between">
-                        Varjenje
+                        <span data-i18n="nav.varjenje"></span>
                         <span class="material-symbols-outlined ml2">arrow_downward</span>
                     </a>
                 </div>
@@ -189,10 +204,7 @@
 
                 <!-- Mobile Order 5 -->
                 <div class="col2-row3 pv3 pl3 pr5">
-                    Nudimo kakovostno varjenje, montažo ter servisiranje naših
-                    izdelkov. Za vsako mehanizacijo se potrudimo, da je dovršena
-                    ter ugodena vašim željam in potrebam. Inovativnost pri
-                    izdelkih je naša značilnost.
+                    <span data-i18n="about.bottom"></span>
                 </div>
 
                 <!-- Mobile Order 6 -->
@@ -210,18 +222,19 @@
             <div class="varjenje-layout pa4">
                 <!-- Mobile Order 1-3 -->
                 <div class="varjenje-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title">
-                    <h1 class="f2">Varjenje</h1>
+                    <h1
+                        class="f2"
+                        data-i18n="nav.varjenje"></h1>
                 </div>
-                <div class="varjenje-col1-row2 ph3 ph5-ns pv3 flex items-center justify-center lh-copy">
-                    Varjenje MIG, MAG, TIG postopki.
-                    <br>
-                    Varimo jekla, inox, konstrukcije.
+                <div class="varjenje-col1-row2 ph3 ph5-ns pv3 flex flex-column items-center justify-center lh-copy">
+                    <span data-i18n="varjenje.t1"></span>
+                    <span data-i18n="varjenje.t2"></span>
                 </div>
                 <div class="varjenje-col1-row3 pa3 flex justify-center items-start">
                     <a
                         href="#montaza"
                         class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between">
-                        Montaža
+                        <span data-i18n="nav.montaza"></span>
                         <span class="material-symbols-outlined ml2">arrow_downward</span>
                     </a>
                 </div>
@@ -260,19 +273,32 @@
             <div class="montaza-layout pa4">
                 <!-- Mobile Order 1-3 -->
                 <div class="montaza-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title">
-                    <h1 class="f2">Montaža</h1>
+                    <h1 class="f2">
+                        <span data-i18n="nav.montaza"></span>
+                    </h1>
                 </div>
                 <div class="montaza-col1-row2 ph3 ph5-ns pv3 flex items-center justify-center lh-copy">
                     <ol class="ma0">
-                        <li>Montaža manjših mehanskih komponent</li>
-                        <li>Montaža konstrukcij</li>
-                        <li>Montaža centralnih mazalnih sistemov</li>
-                        <li>Montaža pnevmatskih sistemov</li>
-                        <li>Montaža hidravličnih sistemov</li>
-                        <li>Montaža elektro vezave</li>
                         <li>
-                            Montaža rezervoarjev in črpalk za naftne derivate za
-                            privat stranke
+                            <span data-i18n="montaza.t1"></span>
+                        </li>
+                        <li>
+                            <span data-i18n="montaza.t2"></span>
+                        </li>
+                        <li>
+                            <span data-i18n="montaza.t3"></span>
+                        </li>
+                        <li>
+                            <span data-i18n="montaza.t4"></span>
+                        </li>
+                        <li>
+                            <span data-i18n="montaza.t5"></span>
+                        </li>
+                        <li>
+                            <span data-i18n="montaza.t6"></span>
+                        </li>
+                        <li>
+                            <span data-i18n="montaza.t7"></span>
                         </li>
                     </ol>
                 </div>
@@ -280,7 +306,7 @@
                     <a
                         href="#servis"
                         class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between">
-                        Servis
+                        <span data-i18n="nav.servis"></span>
                         <span class="material-symbols-outlined ml2">arrow_downward</span>
                     </a>
                 </div>
@@ -339,20 +365,20 @@
             <div class="servis-layout pa4">
                 <!-- Mobile Order 1-3 -->
                 <div class="servis-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title">
-                    <h1 class="f2">Servis</h1>
+                    <h1
+                        class="f2"
+                        data-i18n="nav.servis"></h1>
                 </div>
                 <div class="servis-col1-row2 ph3 ph5-ns pv3 flex flex-column items-center justify-center lh-copy">
                     <p class="mb3">
-                        Zavedamo se, da le hitra in strokovna pomoč zagotavlja
-                        učinkovito delo z našimi izdelki. Zato pozornost
-                        posvečamo tudi poprodajnemu sodelovanju.
+                        <span data-i18n="servis.t1"></span>
                     </p>
                 </div>
                 <div class="servis-col1-row3 pa3 flex justify-center items-start">
                     <a
                         href="#lokacije-dela"
                         class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between">
-                        Lokacije dela
+                        <span data-i18n="nav.lokacije_dela"></span>
                         <span class="material-symbols-outlined ml2">arrow_downward</span>
                     </a>
                 </div>
@@ -372,17 +398,18 @@
             <div class="lokacija-layout pa4">
                 <!-- Mobile Order 1-3 -->
                 <div class="lokacija-col1-row1 pa3 flex justify-center items-center flex-column">
-                    <h1 class="f2">Lokacije dela</h1>
+                    <h1
+                        class="f2"
+                        data-i18n="nav.lokacije_dela"></h1>
                 </div>
                 <div class="lokacija-col1-row2 ph3 ph5-ns pv3 flex justify-center items-center">
-                    Trenutno smo prisotni v državah: Belgija, Nizozemska,
-                    Nemčija, Francija, Slovenija, Hrvaška.
+                    <span data-i18n="lokacije_dela.t1"></span>
                 </div>
                 <div class="lokacija-col1-row3 pa5 pb6 flex justify-center items-start">
                     <a
                         href="#najem-bagrov"
                         class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between">
-                        Najem
+                        <span data-i18n="nav.najem_bagrov"></span>
                         <span class="material-symbols-outlined ml2">arrow_downward</span>
                     </a>
                 </div>
@@ -402,11 +429,13 @@
             <div class="najem-layout pa4">
                 <!-- Mobile Order 1-3 -->
                 <div class="najem-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title">
-                    <h1 class="f2">Najem bagrov</h1>
+                    <h1
+                        class="f2"
+                        data-i18n="nav.najem_bagrov"></h1>
                 </div>
                 <div class="najem-col1-row2 ph3 ph5-ns pv3 flex items-center justify-center lh-copy">
                     <div>
-                        Na voljo:
+                        <span data-i18n="najem_bagrov.t1"></span>
                         <br>
                         <ul class="list ma0 pa0">
                             <li>1,9 t</li>
@@ -414,14 +443,14 @@
                             <li>5,4 t</li>
                         </ul>
                         <br>
-                        Dolgoročni ali kratkoročni najem. Za info nas kontaktirajte.
+                        <span data-i18n="najem_bagrov.t2"></span>
                     </div>
                 </div>
                 <div class="najem-col1-row3 pa3 flex justify-center items-start">
                     <a
                         href="#kontakt"
                         class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between">
-                        Kontakt
+                        <span data-i18n="nav.kontakt"></span>
                         <span class="material-symbols-outlined ml2">arrow_downward</span>
                     </a>
                 </div>
@@ -455,20 +484,22 @@
             <div class="kontakt-layout pa4">
                 <!-- Mobile Order 1-3 -->
                 <div class="kontakt-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title">
-                    <h1 class="f2">Kontakt</h1>
+                    <h1
+                        class="f2"
+                        data-i18n="nav.kontakt"></h1>
                 </div>
                 <div class="kontakt-col1-row2 ph3 ph5-ns pv3 flex items-center justify-center lh-copy">
                     <div>
                         Gregor Cesar
                         <br>
-                        Telefon:
+                        <span data-i18n="kontakt.phone"></span>
                         <a
                             href="tel:+38640166095"
                             class="kontakt-link">
                             00 386 40 166 095
                         </a>
                         <br>
-                        Email:
+                        <span data-i18n="kontakt.email"></span>
                         <a
                             href="mailto:info.mjpgc@gmail.com"
                             class="kontakt-link">
