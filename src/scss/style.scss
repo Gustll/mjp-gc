@@ -1,10 +1,9 @@
-:root {
-  --orange: #f15c21;
-  --black: #000000;
-  --dark: #1a1a1a;
-  --gray: #f7f7f7;
-  --white: #ffffff;
-}
+// Color Variables
+$orange: #f15c21;
+$black: #000000;
+$dark: #1a1a1a;
+$gray: #f7f7f7;
+$white: #ffffff;
 
 html {
   scroll-behavior: smooth;
@@ -15,14 +14,13 @@ html {
 }
 
 body {
-  background-color: var(--gray);
-  /* font-family: "Poetsen One", sans-serif; */
+  background-color: $gray;
   font-family: "Merriweather", serif;
   font-optical-sizing: auto;
   font-weight: 100;
   font-style: normal;
   font-size: 1.2rem;
-  color: var(--black);
+  color: $black;
 }
 
 section {
@@ -34,9 +32,10 @@ section > div:first-child {
   max-width: 1600px;
   padding-top: 75px;
 }
+
 .navigation-button {
-  background: var(--dark);
-  color: var(--orange);
+  background-color: $dark;
+  color: $orange;
   padding: 16px 24px;
   border-radius: 100px;
   cursor: pointer;
@@ -47,8 +46,8 @@ section > div:first-child {
 }
 
 .slider-btn {
-  color: var(--dark);
-  background-color: var(--gray);
+  color: $black;
+  background-color: $gray;
   border: none;
   padding: 1rem 1.1rem;
   cursor: pointer;
@@ -57,24 +56,24 @@ section > div:first-child {
   justify-content: center;
   transition: opacity 0.5s ease;
   opacity: 0.6;
-}
 
-.slider-left {
-  top: 50%;
-  left: 0%;
-  transform: translate(0%, -50%);
-  border-radius: 0 0.5rem 0.5rem 0;
-}
+  &.slider-left {
+    top: 50%;
+    left: 0%;
+    transform: translate(0%, -50%);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
 
-.slider-right {
-  top: 50%;
-  right: 0%;
-  transform: translate(0%, -50%);
-  border-radius: 0.5rem 0 0 0.5rem;
-}
+  &.slider-right {
+    top: 50%;
+    right: 0%;
+    transform: translate(0%, -50%);
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
 
-.slider-btn:hover {
-  opacity: 1;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 /* Initial landing layout */
@@ -86,7 +85,7 @@ section > div:first-child {
 }
 
 .landing-title {
-  color: var(--black);
+  color: $black;
 }
 
 @media screen and (min-width: 768px) {
@@ -102,32 +101,26 @@ section > div:first-child {
     grid-column: 1;
     grid-row: 1;
   }
-
   .col1-row2-span {
     grid-column: 1 / span 2;
     grid-row: 2;
   }
-
   .col1-row2-span-ns {
     grid-column: 1 / span 2;
     grid-row: 2;
   }
-
   .col1-row3 {
     grid-column: 1;
     grid-row: 3;
   }
-
   .col2-row1 {
     grid-column: 2;
     grid-row: 1;
   }
-
   .col2-row3 {
     grid-column: 2;
     grid-row: 3;
   }
-
   .col3-image {
     grid-column: 3;
     grid-row: 1 / span 3;
@@ -149,13 +142,10 @@ section > div:first-child {
   width: 310px;
 }
 
-/* End Initial landing layout */
-
 /* Section Varjenje */
-
 #varjenje {
-  background-color: var(--dark);
-  color: var(--gray);
+  background-color: $dark;
+  color: $gray;
 }
 
 .varjenje-layout {
@@ -203,17 +193,14 @@ section > div:first-child {
     grid-column: 1;
     grid-row: 1;
   }
-
   .varjenje-col1-row2 {
     grid-column: 1;
     grid-row: 2;
   }
-
   .varjenje-col1-row3 {
     grid-column: 1;
     grid-row: 3;
   }
-
   .varjenje-col2-3-span {
     grid-column: 2 / span 2;
     grid-row: 1 / span 3;
@@ -221,18 +208,17 @@ section > div:first-child {
 }
 
 #varjenje .navigation-button {
-  color: var(--dark);
-  background-color: var(--gray);
+  color: $dark;
+  background-color: $gray;
 }
 
 #varjenje .landing-title {
-  color: var(--orange);
+  color: $orange;
 }
 
 /* End Section Varjenje */
 
-/* Section montaza */
-
+/* Section Montaza */
 .montaza-layout {
   display: grid;
   grid-template-columns: 1fr;
@@ -270,34 +256,31 @@ section > div:first-child {
     grid-column: 1;
     grid-row: 1;
   }
-
   .montaza-col1-row2 {
     grid-column: 1;
     grid-row: 2;
   }
-
   .montaza-col1-row3 {
     grid-column: 1;
     grid-row: 3;
   }
-
   .montaza-col2-3-span {
     grid-column: 2 / span 2;
     grid-row: 1 / span 3;
   }
 }
+
 .montaza-layout .slider-btn {
-  background-color: var(--dark);
-  color: var(--orange);
+  background-color: $dark;
+  color: $orange;
 }
 
-/* End Section montaza */
+/* End Section Montaza */
 
 /* Section Servis */
-
 #servis {
-  background-color: var(--dark);
-  color: var(--gray);
+  background-color: $dark;
+  color: $gray;
 }
 
 .servis-layout {
@@ -345,17 +328,14 @@ section > div:first-child {
     grid-column: 1;
     grid-row: 1;
   }
-
   .servis-col1-row2 {
     grid-column: 1;
     grid-row: 2;
   }
-
   .servis-col1-row3 {
     grid-column: 1;
     grid-row: 3;
   }
-
   .servis-col2-3-span {
     grid-column: 2 / span 2;
     grid-row: 1 / span 3;
@@ -363,18 +343,17 @@ section > div:first-child {
 }
 
 #servis .navigation-button {
-  color: var(--dark);
-  background-color: var(--gray);
+  color: $dark;
+  background-color: $gray;
 }
 
 #servis .landing-title {
-  color: var(--orange);
+  color: $orange;
 }
 
 /* End Section Servis */
 
 /* Section Lokacija dela */
-
 .lokacija-layout {
   display: grid;
   grid-template-columns: 1fr;
@@ -397,29 +376,26 @@ section > div:first-child {
     grid-column: 1;
     grid-row: 1;
   }
-
   .lokacija-col1-row2 {
     grid-column: 1;
     grid-row: 2;
   }
-
   .lokacija-col1-row3 {
     grid-column: 1;
     grid-row: 3;
   }
-
   .lokacija-col2-3-span {
     grid-column: 2 / span 2;
     grid-row: 1 / span 3;
   }
 }
+
 /* End Section Lokacija dela */
 
-/* Section najem-bagrov */
-
+/* Section Najem-Bagrov */
 #najem-bagrov {
-  background-color: var(--dark);
-  color: var(--gray);
+  background-color: $dark;
+  color: $gray;
 }
 
 .najem-layout {
@@ -467,21 +443,17 @@ section > div:first-child {
     grid-column: 1;
     grid-row: 1;
   }
-
   .najem-col1-row2 {
     grid-column: 1;
     grid-row: 2;
   }
-
   .najem-col1-row3 {
     grid-column: 1;
     grid-row: 3;
   }
-
   .najem-col1-row3 img {
     width: 230px;
   }
-
   .najem-col2-3-span {
     grid-column: 2 / span 2;
     grid-row: 1 / span 3;
@@ -489,18 +461,17 @@ section > div:first-child {
 }
 
 #najem-bagrov .navigation-button {
-  color: var(--dark);
-  background-color: var(--gray);
+  color: $dark;
+  background-color: $gray;
 }
 
 #najem-bagrov .landing-title {
-  color: var(--orange);
+  color: $orange;
 }
 
-/* End section najem-bagrov */
+/* End Section Najem-Bagrov */
 
-/* Section kontakt */
-
+/* Section Kontakt */
 .kontakt-layout {
   display: grid;
   grid-template-columns: 1fr;
@@ -529,21 +500,17 @@ section > div:first-child {
     grid-column: 1;
     grid-row: 1;
   }
-
   .kontakt-col1-row2 {
     grid-column: 1;
     grid-row: 2;
   }
-
   .kontakt-col1-row3 {
     grid-column: 1;
     grid-row: 3;
   }
-
   .kontakt-col1-row3 img {
     width: 230px;
   }
-
   .kontakt-col2-3-span {
     grid-column: 2 / span 2;
     grid-row: 1 / span 3;
@@ -551,22 +518,21 @@ section > div:first-child {
 }
 
 #kontakt .navigation-button {
-  color: var(--dark);
-  background-color: var(--gray);
+  color: $dark;
+  background-color: $gray;
 }
 
 .kontakt-link {
   text-decoration: none;
-  color: var(--orange);
+  color: $orange;
 }
 
-/* End section kontakt */
+/* End Section Kontakt */
 
 /* Navbar */
-
 #navbar {
   transition: all 0.3s ease;
-  background-color: var(--gray);
+  background-color: $gray;
 }
 
 #navbar .logo {
@@ -581,31 +547,30 @@ section > div:first-child {
 .nav-link,
 .mobile-link {
   text-decoration: none;
-  color: var(--black); /* your black text */
+  color: $black;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .nav-link:hover,
 .mobile-link:hover {
-  color: var(--orange); /* highlight in your orange */
+  color: $orange;
 }
 
 #mobile-menu {
-  background-color: var(--gray);
+  background-color: $gray;
 }
 
 #burger-btn,
 #close-btn {
-  color: var(--black);
+  color: $black;
 }
 
 /* Styling for the custom language selector */
-
 .language-selector {
   left: 150px;
 }
 
 #language-select {
-  background-color: var(--gray);
+  background-color: $gray;
 }
