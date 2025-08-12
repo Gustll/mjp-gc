@@ -573,4 +573,8 @@ section > div:first-child {
 
 #language-select {
   background-color: $gray;
+  font-family: "Apple Color Emoji", /* iOS/macOS */ "Segoe UI Emoji",
+    /* Windows */ "Noto Color Emoji", /* Android/Linux */ "Segoe UI Symbol",
+    /* older fallback */ sans-serif;
+  font-size: 1rem;
 }
