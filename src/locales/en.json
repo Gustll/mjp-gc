@@ -3,36 +3,41 @@
     "varjenje": "Welding",
     "montaza": "Assembly",
     "servis": "Service",
-    "lokacije_dela": "Work Locations",
+    "lokacije_dela": "Locations of presence",
     "najem_bagrov": "Excavator Rental",
     "kontakt": "Contact"
   },
   "about": {
-    "top": "We are a small, developing company, which is why we can offer you quality products and services. We specialize in the assembly of electronics and hydraulics for agricultural and forestry machinery. Our work includes workshop tasks (assembly) and field work (services). The advantage of our company is fast responsiveness.",
-    "bottom": "We offer high-quality welding, assembly, and servicing of our products. For every piece of machinery, we strive to make it refined and tailored to your desires and needs. Innovation in our products is our hallmark."
+    "top": "We are a small, growing company, which is why we can offer you quality products and services. We are engaged in the installation of electronics and hydraulics for agricultural and forestry",
+    "bottom": "We offer high-quality welding, assembly and servicing of our products. We strive to make every piece of machinery perfect and meet your wishes and needs. Product innovation is our hallmark."
   },
   "varjenje": {
-    "t1": "MIG, MAG, TIG welding processes.",
-    "t2": "We weld steels, inox, and structures."
+    "t1": "Welding MIG, MAG, TIG processes.",
+    "t2": "We weld steel, stainless steel, and structures."
   },
   "montaza": {
-    "t1": "Assembly of smaller mechanical components",
-    "t2": "Assembly of structures",
-    "t3": "Assembly of central lubrication systems",
-    "t4": "Assembly of pneumatic systems",
-    "t5": "Assembly of hydraulic systems",
-    "t6": "Assembly of electrical wiring",
-    "t7": "Assembly of tanks and pumps for petroleum derivatives for private customers"
+    "t1": "Assembly of small mechanical components",
+    "t2": "Installation of constructions",
+    "t3": "Installation of central lubrication systems",
+    "t4": "Installation of pneumatic systems",
+    "t5": "Installation of hydraulic systems",
+    "t6": "Installation of electrical wiring",
+    "t7": "Installation of tanks and pumps for petroleum products for private customers"
   },
   "servis": {
-    "t1": "We are aware that only fast and professional assistance ensures efficient work with our products. Therefore, we also pay attention to after-sales cooperation."
+    "t1": "We are aware that only fast and professional assistance ensures efficient work with our products. That is why we also pay attention to after-sales cooperation."
   },
   "lokacije_dela": {
-    "t1": "Currently, we are present in the following countries: Belgium, Netherlands, Germany, France, Slovenia, Croatia."
+    "t1": "We are currently present in the following countries: Belgium, Netherlands, Germany, France, Slovenia, Croatia."
   },
   "najem_bagrov": {
     "t1": "Available:",
-    "t2": "Long-term or short-term rental. For more info, contact us."
+    "t2": "Long or short term rental. Contact us for info.",
+    "t3": "Hydraulic hammers",
+    "t4": "Seeding bucket",
+    "t5": "Plate compactors",
+    "t6": "Rollers",
+    "t7": "Formwork and supports"
   },
   "kontakt": {
     "phone": "Phone: ",

@@ -32,7 +32,12 @@
   },
   "najem_bagrov": {
     "t1": "Na voljo:",
-    "t2": "Dolgoročni ali kratkoročni najem. Za info nas kontaktirajte."
+    "t2": "Dolgoročni ali kratkoročni najem. Za info nas kontaktirajte.",
+    "t3": "Hidravlična kladiva",
+    "t4": "Sejalna žlica",
+    "t5": "Vibro plošče",
+    "t6": "Valjarji",
+    "t7": "Opaži in podporniki"
   },
   "kontakt": {
     "phone": "Telefon: ",
