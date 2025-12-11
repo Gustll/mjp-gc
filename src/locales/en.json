@@ -1,11 +1,11 @@
 {
   "nav": {
-    "varjenje": "Welding",
-    "montaza": "Assembly",
-    "servis": "Service",
-    "lokacije_dela": "Locations of presence",
-    "najem_bagrov": "Excavator Rental",
-    "kontakt": "Contact"
+    "welding": "Welding",
+    "assembly": "Assembly",
+    "service": "Service",
+    "locations": "Locations of presence",
+    "rental": "Excavator Rental",
+    "contact": "Contact"
   },
   "about": {
     "top": "We are a small, growing company, which is why we can offer you quality products and services. We are engaged in the installation of electronics and hydraulics for agricultural and forestry",
