@@ -1,11 +1,11 @@
 {
   "nav": {
-    "varjenje": "Varjenje",
-    "montaza": "Montaža",
-    "servis": "Servis",
-    "lokacije_dela": "Lokacije Dela",
-    "najem_bagrov": "Najem bagrov",
-    "kontakt": "Kontakt"
+    "welding": "Varjenje",
+    "assembly": "Montaža",
+    "service": "Servis",
+    "locations": "Lokacije Dela",
+    "rental": "Najem bagrov",
+    "contact": "Kontakt"
   },
   "about": {
     "top": "Smo manjše podjetje v razvoju, prav zato vam lahko ponudimo kakovostne izdelke in storitve. Ukvarjamo se z montažo elektronike in hidravlike na kmetijsko ter gozdarsko mehanizacijo. Naše delo obsega delo v delavnici (montaža) ter delo na terenu (servisi). Prednost našega podjetja pa je hitra odzivnost.",

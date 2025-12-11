@@ -5,20 +5,20 @@
       <div
         class="varjenje-col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title"
       >
-        <h1 class="f2" data-i18n="nav.varjenje"></h1>
+        <h1 class="f2">{{ $t("nav.welding") }}</h1>
       </div>
       <div
-        class="varjenje-col1-row2 ph3 ph5-ns pv3 flex flex-column items-center justify-center lh-copy"
+        class="varjenje-col1-row2 ph3 ph5-ns pv3 flex flex-column items-start justify-center lh-copy"
       >
-        <span data-i18n="varjenje.t1"></span>
-        <span data-i18n="varjenje.t2"></span>
+        <span>{{ $t("welding.t1") }}</span>
+        <span>{{ $t("welding.t2") }}</span>
       </div>
       <div class="varjenje-col1-row3 pa3 flex justify-center items-start">
         <a
           href="#montaza"
           class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between"
         >
-          <span data-i18n="nav.montaza"></span>
+          <span>{{ $t("nav.assembly") }}</span>
           <span class="material-symbols-outlined ml2">arrow_downward</span>
         </a>
       </div>
