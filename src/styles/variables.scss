@@ -1,2 +1,10 @@
 $primary: hsl(17, 88%, 54%);
+$bg-dark: hsl(0, 0%, 10%);
 
+$text-muted: hsl(0, 0%, 97%);
+
+:root {
+    --bg-dark: #{$bg-dark};
+    --primary: #{$primary};
+    --text-muted: #{$text-muted};
+}

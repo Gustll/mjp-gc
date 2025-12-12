@@ -1,4 +1,2 @@
 <script setup></script>
-<template>
-    im transport
-</template>
+<template>im transport</template>
