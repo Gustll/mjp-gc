@@ -1,40 +1,42 @@
 <script setup>
-import About from "./sections/About.vue";
-import Transport from "./sections/Transport.vue";
-import Welding from "./sections/Welding.vue";
-import Nav from "./shared/components/Nav.vue";
+import About from './sections/About.vue';
+import Assembly from './sections/Assembly.vue';
+import Transport from './sections/Transport.vue';
+import Welding from './sections/Welding.vue';
+import Nav from './shared/components/Nav.vue';
 </script>
 <template>
-  <div id="app">
-    <Nav />
+    <div id="app">
+        <Nav />
 
-    <About />
-    <Welding />
-    <Transport />
-  </div>
+        <About />
+        <Welding />
+        <Assembly />
+        <Transport />
+    </div>
 </template>
 
 <style scoped lang="scss">
 /* Navbar */
 #navbar {
-  transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 #navbar .logo {
-  width: 120px;
+    width: 120px;
 }
 
 #nav-logo {
-  opacity: 0;
-  transition: opacity 0.5s ease;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .nav-link,
 .mobile-link {
-  text-decoration: none;
-  //color: $black;
-  font-weight: 600;
-  transition: color 0.3s ease;
+    text-decoration: none;
+    //color: $black;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 // .nav-link:hover,
