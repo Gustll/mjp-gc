@@ -1,6 +1,7 @@
 <script setup>
 import About from './sections/About.vue';
 import Assembly from './sections/Assembly.vue';
+import Service from './sections/Service.vue';
 import Transport from './sections/Transport.vue';
 import Welding from './sections/Welding.vue';
 import Nav from './shared/components/Nav.vue';
@@ -12,6 +13,7 @@ import Nav from './shared/components/Nav.vue';
         <About />
         <Welding />
         <Assembly />
+        <Service />
         <Transport />
     </div>
 </template>
