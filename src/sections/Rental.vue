@@ -61,7 +61,7 @@
         </div>
     </section>
 </template>
-<style>
+<style lang="scss" scoped>
 .layout {
     display: grid;
     grid-template-columns: 1fr;
