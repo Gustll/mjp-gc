@@ -22,7 +22,7 @@ const images = ['varjenje_1.jpg', 'varjenje_2.jpg', 'varjenje_3.jpg'];
             <div class="col1-row3 pa3 flex justify-center items-start">
                 <a
                     href="#assembly"
-                    class="inline-flex items-center no-underline f4 fw5 justify-between">
+                    class="inline-flex items-center no-underline justify-between">
                     <span>{{ $t('nav.assembly') }}</span>
                     <span class="material-symbols-outlined ml2"
                         >arrow_downward</span

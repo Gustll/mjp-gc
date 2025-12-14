@@ -37,7 +37,7 @@
             <div class="col1-row3 pa3 flex justify-center items-start">
                 <a
                     href="#service"
-                    class="inline-flex items-center no-underline f4 fw5 justify-between">
+                    class="inline-flex items-center no-underline justify-between">
                     <span>{{ $t('nav.service') }}</span>
                     <span class="material-symbols-outlined ml2"
                         >arrow_downward</span

@@ -21,7 +21,7 @@
                 <h2 class="f2 fw7 mb3">MONTAŽA JEKLENIH POSTROJENJ GC s.p.</h2>
                 <a
                     href="#varjenje"
-                    class="inline-flex items-center no-underline f4 fw5 justify-between">
+                    class="inline-flex items-center no-underline justify-between">
                     <span>{{ $t('nav.welding') }}</span>
                     <span class="material-symbols-outlined ml2"
                         >arrow_downward</span

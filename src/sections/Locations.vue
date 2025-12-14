@@ -1,24 +1,22 @@
 <template>
-    <section
-        id="servis"
-        class="secondary-container">
+    <section id="locations">
         <div class="layout pa4">
             <!-- Mobile Order 1-3 -->
             <div
-                class="col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end landing-title">
-                <h1 class="f2">{{ $t('nav.service') }}</h1>
+                class="col1-row1 pa3 flex justify-center items-center flex-column">
+                <h1 class="f2">
+                    {{ $t('nav.locations') }}
+                </h1>
             </div>
             <div
-                class="col1-row2 ph3 ph5-ns pv3 flex flex-column items-center justify-center lh-copy">
-                <p class="mb3">
-                    <span>{{ $t('service.t1') }}</span>
-                </p>
+                class="col1-row2 ph3 ph5-ns pv3 flex justify-center items-center">
+                <span>{{ $t('locations.t1') }}</span>
             </div>
-            <div class="col1-row3 pa3 flex justify-center items-start">
+            <div class="col1-row3 pa5 pb6 flex justify-center items-start">
                 <a
-                    href="#lokacije-dela"
+                    href="#najem-bagrov"
                     class="navigation-button inline-flex items-center no-underline justify-between">
-                    <span>{{ $t('nav.locations') }}</span>
+                    <span>{{ $t("nav.rental") }}</span>
                     <span class="material-symbols-outlined ml2"
                         >arrow_downward</span
                     >
@@ -26,15 +24,16 @@
             </div>
 
             <!-- Mobile Order 4 -->
-            <div
-                class="col2-3-span pa4 flex justify-center items-center relative">
+            <div class="col2-3-span">
                 <img
-                    src="/assets/servis.jpg"
-                    class="w-auto h-100" />
+                    src="/assets/europe_custom_map.svg"
+                    alt="Lokacije dela - Evropa"
+                    class="w-100 h-100 object-contain" />
             </div>
         </div>
     </section>
 </template>
+
 <style lang="scss" scoped>
 .layout {
     display: grid;
@@ -42,17 +41,6 @@
     grid-auto-rows: auto;
     gap: 1rem;
     padding: 1rem;
-
-    & > div {
-        height: 100%;
-        box-sizing: border-box;
-        overflow: hidden;
-    }
-
-    img {
-        object-fit: contain;
-        overflow: hidden;
-    }
 
     @media screen and (min-width: 768px) {
         grid-template-columns: 1fr 1fr 1fr;
