@@ -20,7 +20,7 @@
                 class="ph3 ph5-ns pv3 flex flex-column items-start col1-row2-span-ns">
                 <h2 class="f2 fw7 mb3">MONTAŽA JEKLENIH POSTROJENJ GC s.p.</h2>
                 <a
-                    href="#varjenje"
+                    href="#welding"
                     class="inline-flex items-center no-underline justify-between">
                     <span>{{ $t('nav.welding') }}</span>
                     <span class="material-symbols-outlined ml2"

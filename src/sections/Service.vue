@@ -1,6 +1,6 @@
 <template>
     <section
-        id="servis"
+        id="service"
         class="secondary-container">
         <div class="layout pa4">
             <!-- Mobile Order 1-3 -->
@@ -16,7 +16,7 @@
             </div>
             <div class="col1-row3 pa3 flex justify-center items-start">
                 <a
-                    href="#lokacije-dela"
+                    href="#locations"
                     class="navigation-button inline-flex items-center no-underline justify-between">
                     <span>{{ $t('nav.locations') }}</span>
                     <span class="material-symbols-outlined ml2"

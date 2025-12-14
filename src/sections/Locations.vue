@@ -14,7 +14,7 @@
             </div>
             <div class="col1-row3 pa5 pb6 flex justify-center items-start">
                 <a
-                    href="#najem-bagrov"
+                    href="#rental"
                     class="navigation-button inline-flex items-center no-underline justify-between">
                     <span>{{ $t("nav.rental") }}</span>
                     <span class="material-symbols-outlined ml2"

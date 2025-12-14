@@ -6,7 +6,7 @@ const images = ['varjenje_1.jpg', 'varjenje_2.jpg', 'varjenje_3.jpg'];
 
 <template>
     <section
-        id="varjenje"
+        id="welding"
         class="secondary-container">
         <div class="layout pa4">
             <!-- Mobile Order 1-3 -->

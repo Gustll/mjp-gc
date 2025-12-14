@@ -29,32 +29,32 @@ const closeMenu = () => (isOpen.value = false);
         <!-- Desktop Navigation -->
         <nav class="dn flex-l pa3">
             <a
-                href="#varjenje"
+                href="#welding"
                 class="nav-link ml3"
                 >{{ $t('nav.welding') }}</a
             >
             <a
-                href="#montaza"
+                href="#assembly"
                 class="nav-link ml3"
                 >{{ $t('nav.assembly') }}</a
             >
             <a
-                href="#servis"
+                href="#service"
                 class="nav-link ml3"
                 >{{ $t('nav.service') }}</a
             >
             <a
-                href="#lokacije-dela"
+                href="#locations"
                 class="nav-link ml3"
                 >{{ $t('nav.locations') }}</a
             >
             <a
-                href="#najem-bagrov"
+                href="#rental"
                 class="nav-link ml3"
                 >{{ $t('nav.rental') }}</a
             >
             <a
-                href="#kontakt"
+                href="#contact"
                 class="nav-link ml3"
                 >{{ $t('nav.contact') }}</a
             >
@@ -75,37 +75,37 @@ const closeMenu = () => (isOpen.value = false);
         class="fixed top-0 right-0 w-100 h-100 bg-white flex-column items-center justify-center z-4"
         :class="isOpen ? 'flex' : 'dn'">
         <a
-            href="#varjenje"
+            href="#welding"
             class="mobile-link mb3 f3"
             @click="closeMenu">
             {{ $t('nav.welding') }}
         </a>
         <a
-            href="#montaza"
+            href="#assembly"
             class="mobile-link mb3 f3"
             @click="closeMenu">
             {{ $t('nav.assembly') }}
         </a>
         <a
-            href="#servis"
+            href="#service"
             class="mobile-link mb3 f3"
             @click="closeMenu">
             {{ $t('nav.service') }}
         </a>
         <a
-            href="#lokacije-dela"
+            href="#locations"
             class="mobile-link mb3 f3"
             @click="closeMenu">
             {{ $t('nav.locations') }}
         </a>
         <a
-            href="#najem-bagrov"
+            href="#rental"
             class="mobile-link mb3 f3"
             @click="closeMenu">
             {{ $t('nav.rental') }}
         </a>
         <a
-            href="#kontakt"
+            href="#contact"
             class="mobile-link mb3 f3"
             @click="closeMenu">
             {{ $t('nav.contact') }}
