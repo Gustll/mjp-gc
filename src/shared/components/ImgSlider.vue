@@ -73,7 +73,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <div class="relative w-100 h-100 overflow-hidden slider-container">
+    <div class="relative w-100 h-100 overflow-hidden slider-container pa4">
         <div class="w-100 h-100 relative">
             <img
                 v-for="(image, index) in images"
@@ -101,7 +101,7 @@ onUnmounted(() => {
         </button>
 
         <!-- Optional: Dots indicator -->
-        <div class="slider-dots absolute flex z-10">
+        <div class="slider-dots absolute flex z-9">
             <span
                 v-for="(_, index) in images"
                 :key="index"
@@ -140,7 +140,7 @@ onUnmounted(() => {
     }
 
     .slider-dots {
-        bottom: 20px;
+        bottom: 50px;
         left: 50%;
         transform: translateX(-50%);
         gap: 10px;
@@ -163,6 +163,7 @@ onUnmounted(() => {
 
     @media screen and (max-width: 768px) { 
         height: 220px;
+        width: 295px;
     }
 
 }

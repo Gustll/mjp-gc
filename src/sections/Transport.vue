@@ -26,7 +26,7 @@ import ImgSlider from '@/shared/components/ImgSlider.vue';
 
             <!-- Mobile Order 4 -->
             <div
-                class="col2-3-span pa4 flex justify-center items-center relative">
+                class="col2-3-span flex justify-center items-center relative">
                 <ImgSlider
                     :prefix="'prevozi'"
                     :count="4" />
