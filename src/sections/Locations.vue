@@ -12,7 +12,7 @@
                 class="col1-row2 ph3 ph5-ns pv3 flex justify-center items-center">
                 <span>{{ $t('locations.t1') }}</span>
             </div>
-            <div class="col1-row3 pa5 pb6 flex justify-center items-start">
+            <div class="col1-row3 pa3 flex justify-center items-start">
                 <a
                     href="#rental"
                     class="navigation-button inline-flex items-center no-underline justify-between">
@@ -40,14 +40,12 @@
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
     gap: 1rem;
-    padding: 1rem;
 
     @media screen and (min-width: 768px) {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         height: 100vh;
         width: 100vw;
-        padding: 0;
         gap: 0;
 
         .col1-row1 {

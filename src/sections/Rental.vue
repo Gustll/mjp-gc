@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import ImgSlider from '@/shared/components/ImgSlider.vue';
+
+</script>
+
 <template>
     <section
         id="rental"
@@ -47,16 +52,9 @@
             <!-- Mobile Order 4 -->
             <div
                 class="col2-3-span pa4 flex justify-center items-center relative">
-                <button
-                    class="slider-btn slider-left absolute ml4"
-                    onclick="plusDivs('slide', -1)">
-                    &#10094;
-                </button>
-                <button
-                    class="slider-btn slider-right absolute mr4"
-                    onclick="plusDivs('slide', +1)">
-                    &#10095;
-                </button>
+                <ImgSlider
+                    :prefix="'najem'"
+                    :count="3" />
             </div>
         </div>
     </section>
@@ -67,7 +65,6 @@
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
     gap: 1rem;
-    padding: 1rem;
 
     & > div {
         height: 100%;
@@ -85,7 +82,6 @@
         grid-template-rows: 1fr 1fr 1fr;
         height: 100vh;
         width: 100vw;
-        padding: 0;
         gap: 0;
 
         .col1-row1 {

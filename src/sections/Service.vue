@@ -41,7 +41,6 @@
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
     gap: 1rem;
-    padding: 1rem;
 
     & > div {
         height: 100%;
@@ -59,7 +58,6 @@
         grid-template-rows: 1fr 1fr 1fr;
         height: 100vh;
         width: 100vw;
-        padding: 0;
         gap: 0;
 
         .col1-row1 {

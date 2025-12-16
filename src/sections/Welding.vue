@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import ImgSlider from '@/shared/components/ImgSlider.vue';
 
-const images = ['varjenje_1.jpg', 'varjenje_2.jpg', 'varjenje_3.jpg'];
 </script>
 
 <template>
@@ -33,7 +32,9 @@ const images = ['varjenje_1.jpg', 'varjenje_2.jpg', 'varjenje_3.jpg'];
             <!-- Mobile Order 4 -->
             <div
                 class="col2-3-span pa4 flex justify-center items-center relative">
-                <ImgSlider :images="images" />
+                <ImgSlider
+                    :prefix="'varjenje'"
+                    :count="3" />
             </div>
         </div>
     </section>
@@ -45,7 +46,6 @@ const images = ['varjenje_1.jpg', 'varjenje_2.jpg', 'varjenje_3.jpg'];
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
     gap: 1rem;
-    padding: 1rem;
 
     & > div {
         height: 100%;
@@ -76,7 +76,6 @@ const images = ['varjenje_1.jpg', 'varjenje_2.jpg', 'varjenje_3.jpg'];
         grid-template-rows: 1fr 1fr 1fr;
         height: 100vh;
         width: 100vw;
-        padding: 0;
         gap: 0;
     }
 
