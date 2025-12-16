@@ -7,14 +7,13 @@ import ImgSlider from '@/shared/components/ImgSlider.vue';
         id="transport"
         class="secondary-container">
         <div class="layout pa4">
-            <!-- Mobile Order 1-3 -->
+            <!-- Mobile Order 1-2 -->
             <div
                 class="col1-row1 ph3 ph5-ns pv3 flex justify-end items-center flex-column flex-end">
                 <h1 class="f2">{{ $t('nav.transport') }}</h1>
             </div>
             <div
-                class="col1-row2 ph3 ph5-ns pv3 flex flex-column items-start justify-center lh-copy"></div>
-            <div class="col1-row3 pa3 flex justify-center items-start">
+                class="col1-row2 ph3 ph5-ns pv3 flex flex-column items-center justify-top lh-copy">
                 <a
                     href="#rental"
                     class="inline-flex items-center no-underline justify-between">
@@ -82,10 +81,6 @@ import ImgSlider from '@/shared/components/ImgSlider.vue';
     .col1-row2 {
         grid-column: 1;
         grid-row: 2;
-    }
-    .col1-row3 {
-        grid-column: 1;
-        grid-row: 3;
     }
     .col2-3-span {
         grid-column: 2 / span 2;
