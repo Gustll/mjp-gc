@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue';
 
 const props = defineProps({
     prefix: {
@@ -16,7 +16,6 @@ const props = defineProps({
     },
 });
 
-// Generate images array from prefix and count
 const images = computed(() =>
     Array.from(
         { length: props.count },
@@ -25,10 +24,15 @@ const images = computed(() =>
 );
 
 const currentIndex = ref(0);
+const sliderContainer = ref<HTMLElement | null>(null);
+const isVisible = ref(false);
+const loadedImages = ref<Set<number>>(new Set());
 let autoplayTimer: number | null = null;
+let observer: IntersectionObserver | null = null;
 
 function next(): void {
     currentIndex.value = (currentIndex.value + 1) % images.value.length;
+    preloadAdjacentImages();
     resetAutoplay();
 }
 
@@ -37,18 +41,46 @@ function prev(): void {
         currentIndex.value === 0
             ? images.value.length - 1
             : currentIndex.value - 1;
+    preloadAdjacentImages();
     resetAutoplay();
 }
 
 function goTo(index: number): void {
     currentIndex.value = index;
+    preloadAdjacentImages();
     resetAutoplay();
 }
 
+function preloadAdjacentImages(): void {
+    const indices = [
+        currentIndex.value,
+        (currentIndex.value + 1) % images.value.length,
+        currentIndex.value === 0
+            ? images.value.length - 1
+            : currentIndex.value - 1,
+    ];
+
+    indices.forEach((index) => {
+        if (!loadedImages.value.has(index)) {
+            loadedImages.value.add(index);
+        }
+    });
+}
+
+function loadAllImages(): void {
+    // Load all images at once when slider becomes visible
+    for (let i = 0; i < images.value.length; i++) {
+        loadedImages.value.add(i);
+    }
+}
+
 function startAutoplay(): void {
+    if (!isVisible.value) return;
+
     autoplayTimer = setInterval(() => {
         currentIndex.value = (currentIndex.value + 1) % images.value.length;
-    }, 5000); // 5 seconds
+        preloadAdjacentImages();
+    }, 5000);
 }
 
 function stopAutoplay(): void {
@@ -63,51 +95,84 @@ function resetAutoplay(): void {
     startAutoplay();
 }
 
+function setupIntersectionObserver(): void {
+    observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting && !isVisible.value) {
+                    isVisible.value = true;
+                    loadAllImages();
+                    startAutoplay();
+                } else if (!entry.isIntersecting && isVisible.value) {
+                    isVisible.value = false;
+                    stopAutoplay();
+                }
+            });
+        },
+        {
+            threshold: 0.1, // Trigger when 10% of component is visible
+            rootMargin: '50px', // Start loading slightly before entering viewport
+        },
+    );
+
+    if (sliderContainer.value) {
+        observer.observe(sliderContainer.value);
+    }
+}
+
 onMounted(() => {
-    startAutoplay();
+    setupIntersectionObserver();
 });
 
 onUnmounted(() => {
     stopAutoplay();
+    if (observer && sliderContainer.value) {
+        observer.unobserve(sliderContainer.value);
+        observer.disconnect();
+    }
 });
 </script>
 
 <template>
-    <div class="relative w-100 h-100 overflow-hidden slider-container pa4">
+    <div
+        ref="sliderContainer"
+        class="relative w-100 h-100 overflow-hidden slider-container pa4">
         <div class="w-100 h-100 relative">
             <img
                 v-for="(image, index) in images"
                 :key="index"
-                :src="`/assets/${image}`"
+                v-show="loadedImages.has(index)"
+                :src="loadedImages.has(index) ? `/assets/${image}` : undefined"
                 :class="[
                     'slider-image absolute w-auto h-auto',
                     { active: index === currentIndex },
                 ]"
+                :loading="index === 0 ? 'eager' : 'lazy'"
                 alt="Slide" />
         </div>
 
-        <button
-            class="slider-btn left-0 white pa3 pointer br3 absolute"
-            @click="prev"
-            aria-label="Previous slide">
-            &#10094;
-        </button>
+        <template v-if="isVisible">
+            <button
+                class="slider-btn left-0 white pa3 pointer br3 absolute"
+                @click="prev"
+                aria-label="Previous slide">
+                &#10094;
+            </button>
+            <button
+                class="slider-btn right-0 white pa3 pointer br3 absolute"
+                @click="next"
+                aria-label="Next slide">
+                &#10095;
+            </button>
 
-        <button
-            class="slider-btn right-0 white pa3 pointer br3 absolute"
-            @click="next"
-            aria-label="Next slide">
-            &#10095;
-        </button>
-
-        <!-- Optional: Dots indicator -->
-        <div class="slider-dots absolute flex z-9">
-            <span
-                v-for="(_, index) in images"
-                :key="index"
-                :class="['dot pointer', { active: index === currentIndex }]"
-                @click="goTo(index)"></span>
-        </div>
+            <div class="slider-dots absolute flex z-9">
+                <span
+                    v-for="(_, index) in images"
+                    :key="index"
+                    :class="['dot pointer', { active: index === currentIndex }]"
+                    @click="goTo(index)"></span>
+            </div>
+        </template>
     </div>
 </template>
 
@@ -122,6 +187,7 @@ onUnmounted(() => {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+
         &.active {
             opacity: 1;
         }
@@ -156,15 +222,15 @@ onUnmounted(() => {
         &.active {
             background: rgba(255, 255, 255, 1);
         }
+
         &:hover {
             background: rgba(255, 255, 255, 0.8);
         }
     }
 
-    @media screen and (max-width: 768px) { 
+    @media screen and (max-width: 768px) {
         height: 220px;
         width: 295px;
     }
-
 }
 </style>
