@@ -1,19 +1,20 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import LanguageSwitcher from './LanguageSwitcher.vue';
 
 const isOpen = ref(false);
 
-const openMenu = () => (isOpen.value = true);
+const toggleMenu = () => (isOpen.value = !isOpen.value);
 const closeMenu = () => (isOpen.value = false);
 </script>
 
 <template>
     <header
         id="navbar"
-        class="fixed top-0 left-0 w-100 flex justify-between items-center bg-white-90 z-5 pa2">
+        class="fixed top-0 left-0 w-100 flex justify-between items-center z-5 pa2 relative">
         <!-- Logo -->
         <div
-            class="logo"
+            class="logo relative"
             ref="nav-logo">
             <a href="#about">
                 <img
@@ -22,7 +23,7 @@ const closeMenu = () => (isOpen.value = false);
             </a>
         </div>
 
-        <div class="language-selector absolute">
+        <div class="language-container absolute">
             <LanguageSwitcher />
         </div>
 
@@ -63,7 +64,7 @@ const closeMenu = () => (isOpen.value = false);
         <!-- Mobile Burger -->
         <div class="burger flex dn-l items-center">
             <button
-                @click="openMenu"
+                @click="toggleMenu"
                 class="f3 bg-transparent bn pointer">
                 ☰
             </button>
@@ -72,7 +73,7 @@ const closeMenu = () => (isOpen.value = false);
 
     <!-- Mobile expanded menu -->
     <div
-        class="fixed top-0 right-0 w-100 h-100 bg-white flex-column items-center justify-center z-4"
+        class="fixed top-0 right-0 w-100 h-100 flex-column items-center justify-center z-4 mobile-nav"
         :class="isOpen ? 'flex' : 'dn'">
         <a
             href="#welding"
@@ -127,6 +128,10 @@ const closeMenu = () => (isOpen.value = false);
     .logo {
         width: 120px;
     }
+
+    .language-container {
+        left: 150px;
+    }
 }
 
 #navbar #nav-logo {
@@ -147,28 +152,7 @@ const closeMenu = () => (isOpen.value = false);
     color: var(--primary);
 }
 
-#mobile-menu {
+.mobile-nav {
     background-color: var(--text-muted);
-}
-
-#burger-btn,
-#close-btn {
-    color: var(--bg-dark);
-}
-
-/* Styling for the custom language selector */
-.language-selector {
-    left: 150px;
-}
-
-#language-select {
-    background-color: var(--text-muted);
-    font-family:
-        'Apple Color Emoji',
-        /* iOS/macOS */ 'Segoe UI Emoji',
-        /* Windows */ 'Noto Color Emoji',
-        /* Android/Linux */ 'Segoe UI Symbol',
-        /* older fallback */ sans-serif;
-    font-size: 1rem;
 }
 </style>
