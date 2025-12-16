@@ -5,8 +5,7 @@ import ImgSlider from '@/shared/components/ImgSlider.vue';
 
 <template>
     <section
-        id="rental"
-        class="secondary-container">
+        id="rental">
         <div class="layout pa4">
             <!-- Mobile Order 1-3 -->
             <div
@@ -41,9 +40,9 @@ import ImgSlider from '@/shared/components/ImgSlider.vue';
             </div>
             <div class="col1-row3 pa3 flex justify-center items-start">
                 <a
-                    href="#contact"
+                    href="#welding"
                     class="navigation-button inline-flex items-center no-underline f4 fw5 justify-between">
-                    <span>{{ $t('nav.contact') }}</span>
+                    <span>{{ $t('nav.welding') }}</span>
                     <span class="material-symbols-outlined ml2"
                         >arrow_downward</span
                     >

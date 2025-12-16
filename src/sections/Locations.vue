@@ -14,9 +14,9 @@
             </div>
             <div class="col1-row3 pa3 flex justify-center items-start">
                 <a
-                    href="#rental"
+                    href="#contact"
                     class="navigation-button inline-flex items-center no-underline justify-between">
-                    <span>{{ $t("nav.rental") }}</span>
+                    <span>{{ $t("nav.contact") }}</span>
                     <span class="material-symbols-outlined ml2"
                         >arrow_downward</span
                     >

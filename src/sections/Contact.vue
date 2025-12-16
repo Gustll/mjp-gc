@@ -1,5 +1,5 @@
 <template>
-    <section id="contact">
+    <section id="contact" class="secondary-container">
         <div class="layout pa4">
             <!-- Mobile Order 1-3 -->
             <div
@@ -14,14 +14,14 @@
                     <span>{{ $t('contact.phone') }}</span>
                     <a
                         href="tel:+38640166095"
-                        class="link">
+                        class="link primary">
                         00 386 40 166 095
                     </a>
                     <br />
                     <span>{{ $t('contact.email') }}</span>
                     <a
                         href="mailto:info.mjpgc@gmail.com"
-                        class="link">
+                        class="link primary">
                         info.mjpgc@gmail.com
                     </a>
                 </div>
@@ -96,6 +96,7 @@
     .link {
         background-color: transparent;
         padding: 0;
+        color: var(--primary);
     }
 }
 </style>

@@ -2,6 +2,11 @@
 import { onMounted, onUnmounted, ref } from 'vue';
 import LanguageSwitcher from './LanguageSwitcher.vue';
 
+interface NavLink {
+    label: string;
+    link: string;
+}
+
 const isOpen = ref(false);
 
 const toggleMenu = () => (isOpen.value = !isOpen.value);
@@ -9,6 +14,37 @@ const closeMenu = () => (isOpen.value = false);
 
 const isLogoVisible = ref(false);
 let observer: IntersectionObserver | null = null;
+
+const navLinks: NavLink[] = [
+    {
+        label: 'nav.transport',
+        link: '#transport',
+    },
+    {
+        label: 'nav.rental',
+        link: '#rental',
+    },
+    {
+        label: 'nav.welding',
+        link: '#welding',
+    },
+    {
+        label: 'nav.assembly',
+        link: '#assembly',
+    },
+    {
+        label: 'nav.service',
+        link: '#service',
+    },
+    {
+        label: 'nav.locations',
+        link: '#locations',
+    },
+    {
+        label: 'nav.contact',
+        link: '#contact',
+    },
+];
 
 function getThreshold() {
     // Mobile: 50% scrolled (threshold 0.5)
@@ -77,35 +113,12 @@ onUnmounted(() => {
         <!-- Desktop Navigation -->
         <nav class="dn flex-l pa3">
             <a
-                href="#welding"
-                class="nav-link ml3"
-                >{{ $t('nav.welding') }}</a
-            >
-            <a
-                href="#assembly"
-                class="nav-link ml3"
-                >{{ $t('nav.assembly') }}</a
-            >
-            <a
-                href="#service"
-                class="nav-link ml3"
-                >{{ $t('nav.service') }}</a
-            >
-            <a
-                href="#locations"
-                class="nav-link ml3"
-                >{{ $t('nav.locations') }}</a
-            >
-            <a
-                href="#rental"
-                class="nav-link ml3"
-                >{{ $t('nav.rental') }}</a
-            >
-            <a
-                href="#contact"
-                class="nav-link ml3"
-                >{{ $t('nav.contact') }}</a
-            >
+                v-for="(nav, index) in navLinks"
+                :key="index"
+                :href="nav.link"
+                class="nav-link ml3">
+                {{ $t(nav.label) }}
+            </a>
         </nav>
 
         <!-- Mobile Burger -->
@@ -123,40 +136,12 @@ onUnmounted(() => {
         class="fixed top-0 right-0 w-100 h-100 flex-column items-center justify-center z-4 mobile-nav"
         :class="isOpen ? 'flex' : 'dn'">
         <a
-            href="#welding"
+            v-for="(nav, index) in navLinks"
+            :key="index"
+            :href="nav.link"
             class="mobile-link mb3 f3"
             @click="closeMenu">
-            {{ $t('nav.welding') }}
-        </a>
-        <a
-            href="#assembly"
-            class="mobile-link mb3 f3"
-            @click="closeMenu">
-            {{ $t('nav.assembly') }}
-        </a>
-        <a
-            href="#service"
-            class="mobile-link mb3 f3"
-            @click="closeMenu">
-            {{ $t('nav.service') }}
-        </a>
-        <a
-            href="#locations"
-            class="mobile-link mb3 f3"
-            @click="closeMenu">
-            {{ $t('nav.locations') }}
-        </a>
-        <a
-            href="#rental"
-            class="mobile-link mb3 f3"
-            @click="closeMenu">
-            {{ $t('nav.rental') }}
-        </a>
-        <a
-            href="#contact"
-            class="mobile-link mb3 f3"
-            @click="closeMenu">
-            {{ $t('nav.contact') }}
+            {{ $t(nav.label) }}
         </a>
 
         <button

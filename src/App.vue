@@ -14,11 +14,12 @@ import Nav from './shared/components/Nav.vue';
         <Nav />
 
         <About />
+        <Transport />
+        <Rental />
         <Welding />
         <Assembly />
         <Service />
         <Locations />
-        <Rental />
         <Contact />
     </div>
 </template>
