@@ -29,7 +29,7 @@ function switchLanguage(code) {
             v-for="lang in languages"
             :key="lang.code"
             :class="['lang-btn', { active: currentLocale === lang.code }]"
-            class="flex items-center br3 pointer"
+            class="flex items-center br3 pointer text"
             @click="switchLanguage(lang.code)">
             <component
                 :is="lang.icon"

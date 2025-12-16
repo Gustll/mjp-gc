@@ -125,7 +125,7 @@ onUnmounted(() => {
         <div class="burger flex dn-l items-center">
             <button
                 @click="toggleMenu"
-                class="f3 bg-transparent bn pointer">
+                class="f3 bg-transparent bn pointer text">
                 ☰
             </button>
         </div>
@@ -146,7 +146,7 @@ onUnmounted(() => {
 
         <button
             @click="closeMenu"
-            class="mt4 f2 bg-transparent bn pointer">
+            class="mt4 f2 bg-transparent bn pointer text">
             ✕
         </button>
     </div>

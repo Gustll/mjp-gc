@@ -7,4 +7,9 @@ $text-muted: hsl(0, 0%, 97%);
     --bg-dark: #{$bg-dark};
     --primary: #{$primary};
     --text-muted: #{$text-muted};
+    --text-dark: hsl(0, 0%, 0);
+}
+
+.text {
+    color: var(--text-dark);
 }
