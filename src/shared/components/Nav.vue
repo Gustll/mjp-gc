@@ -1,11 +1,58 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 import LanguageSwitcher from './LanguageSwitcher.vue';
 
 const isOpen = ref(false);
 
 const toggleMenu = () => (isOpen.value = !isOpen.value);
 const closeMenu = () => (isOpen.value = false);
+
+const isLogoVisible = ref(false);
+let observer: IntersectionObserver | null = null;
+
+function getThreshold() {
+    // Mobile: 50% scrolled (threshold 0.5)
+    // Desktop: 30% scrolled (threshold 0.83)
+    return window.innerWidth < 768 ? 0.4 : 0.83;
+}
+
+function setupObserver() {
+    // Clean up existing observer
+    if (observer) {
+        observer.disconnect();
+    }
+
+    const firstSection = document.querySelector('section:first-of-type');
+
+    if (firstSection) {
+        const threshold = getThreshold();
+
+        observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    isLogoVisible.value =
+                        !entry.isIntersecting ||
+                        entry.intersectionRatio < threshold;
+                });
+            },
+            { threshold },
+        );
+
+        observer.observe(firstSection);
+    }
+}
+
+onMounted(() => {
+    setupObserver();
+    window.addEventListener('resize', setupObserver);
+});
+
+onUnmounted(() => {
+    if (observer) {
+        observer.disconnect();
+    }
+    window.removeEventListener('resize', setupObserver);
+});
 </script>
 
 <template>
@@ -14,8 +61,8 @@ const closeMenu = () => (isOpen.value = false);
         class="fixed top-0 left-0 w-100 flex justify-between items-center z-5 pa2 relative">
         <!-- Logo -->
         <div
-            class="logo relative"
-            ref="nav-logo">
+            class="logo"
+            :class="{ visible: isLogoVisible }">
             <a href="#about">
                 <img
                     src="/assets/logo_gc.png"
@@ -127,16 +174,21 @@ const closeMenu = () => (isOpen.value = false);
 
     .logo {
         width: 120px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
+
+        &.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .language-container {
         left: 150px;
     }
-}
-
-#navbar #nav-logo {
-    opacity: 0;
-    transition: opacity 0.5s ease;
 }
 
 .nav-link,
